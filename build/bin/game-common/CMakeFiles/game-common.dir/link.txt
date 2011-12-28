@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC  -O0 -Wall -g -ggdb  -shared -Wl,-soname,libgame-common.so -o libgame-common.so CMakeFiles/game-common.dir/Session.cpp.o CMakeFiles/game-common.dir/SessionMgr.cpp.o 

@@ -1,4 +1,0 @@
-/root/monika/build/bin/client/CMakeFiles/client.dir
-/root/monika/build/bin/common/CMakeFiles/common.dir
-/root/monika/build/bin/game-common/CMakeFiles/game-common.dir
-/root/monika/build/bin/CMakeFiles/monika.dir
