@@ -1,0 +1,1 @@
+/usr/bin/c++    -O0 -Wall -g -ggdb   CMakeFiles/monika.dir/Main.cpp.o  -o monika -rdynamic -lboost_system -lboost_thread -lboost_date_time -llua common/libcommon.so game-common/libgame-common.so -lboost_date_time -Wl,-rpath,/root/monika/build/bin/common:/root/monika/build/bin/game-common: 

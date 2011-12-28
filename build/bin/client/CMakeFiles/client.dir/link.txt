@@ -1,0 +1,1 @@
+/usr/bin/c++    -O0 -Wall -g -ggdb   CMakeFiles/client.dir/Main.cpp.o CMakeFiles/client.dir/StatConnection.cpp.o  -o client -rdynamic -lboost_system -lboost_thread ../common/libcommon.so ../game-common/libgame-common.so -lboost_date_time -Wl,-rpath,/root/monika/build/bin/common:/root/monika/build/bin/game-common 

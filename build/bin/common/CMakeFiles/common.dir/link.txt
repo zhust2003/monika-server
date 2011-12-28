@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -O0 -Wall -g -ggdb  -shared -Wl,-soname,libcommon.so -o libcommon.so CMakeFiles/common.dir/Config.cpp.o CMakeFiles/common.dir/Logger.cpp.o CMakeFiles/common.dir/TcpServer.cpp.o CMakeFiles/common.dir/Connection.cpp.o CMakeFiles/common.dir/ServicePool.cpp.o CMakeFiles/common.dir/Time.cpp.o -lboost_date_time 

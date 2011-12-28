@@ -1,0 +1,530 @@
+13:07:47 D Log 打开日志文件 logs/17.12.2011.log 成功
+13:07:47 D Log 日志系统初始化
+13:07:47 L Test test
+13:07:47 D Test test
+13:07:47 S Test test
+13:07:47 E Test test
+13:07:47 W Test test
+13:07:47 D Test 0.0.0.0:6061, 0.100000
+13:07:47 T Trace 中文调试信息
+13:07:47 D Log 日志系统关闭
+13:08:18 D Log 打开日志文件 logs/17.12.2011.log 成功
+13:08:18 D Log 日志系统初始化
+13:08:18 L Test test
+13:08:18 D Test test
+13:08:18 S Test test
+13:08:18 E Test test
+13:08:18 W Test test
+13:08:18 D Test 0.0.0.0:6061, 0.100000
+13:08:18 T Trace 中文调试信息
+13:08:18 D Log 日志系统关闭
+13:54:33 D Log 打开日志文件 logs/17.12.2011.log 成功
+13:54:33 D Log 日志系统初始化
+13:54:33 L Test test
+13:54:33 D Test test
+13:54:33 S Test test
+13:54:33 E Test test
+13:54:33 W Test test
+13:54:33 D Test 0.0.0.0:6061, 0.100000
+13:54:33 T Trace 中文调试信息
+13:54:33 D Log 日志系统关闭
+14:03:48 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:03:48 D Log 日志系统初始化
+14:03:48 L Test test
+14:03:48 D Test test
+14:03:48 S Test test
+14:03:48 E Test test
+14:03:48 W Test test
+14:03:48 D Test 0.0.0.0:6061, 0.100000
+14:03:48 T Trace 中文调试信息
+14:03:48 D Log 日志系统关闭
+14:04:31 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:04:31 D Log 日志系统初始化
+14:04:31 L Test test
+14:04:31 D Test test
+14:04:31 S Test test
+14:04:31 E Test test
+14:04:31 W Test test
+14:04:31 D Test 0.0.0.0:6061, 0.100000
+14:04:31 T Trace 中文调试信息
+14:04:31 D Log 日志系统关闭
+14:05:30 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:05:30 D Log 日志系统初始化
+14:05:30 L Test test
+14:05:30 D Test test
+14:05:30 S Test test
+14:05:30 E Test test
+14:05:30 W Test test
+14:05:30 D Test 0.0.0.0:6061, 0.100000
+14:05:30 T Trace 中文调试信息
+14:05:30 D Log 日志系统关闭
+14:06:55 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:06:55 D Log 日志系统初始化
+14:06:55 L Test test
+14:06:55 D Test test
+14:06:55 S Test test
+14:06:55 E Test test
+14:06:55 W Test test
+14:06:55 D Test 0.0.0.0:6061, 0.100000
+14:06:55 T Trace 中文调试信息
+14:06:55 D Log 日志系统关闭
+14:08:23 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:08:23 D Log 日志系统初始化
+14:08:23 L Test test
+14:08:23 D Test test
+14:08:23 S Test test
+14:08:23 E Test test
+14:08:23 W Test test
+14:08:23 D Test 0.0.0.0:6061, 0.100000
+14:08:23 T Trace 中文调试信息
+14:08:23 D Log 日志系统关闭
+14:08:43 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:08:43 D Log 日志系统初始化
+14:08:43 L Test test
+14:08:43 D Test test
+14:08:43 S Test test
+14:08:43 E Test test
+14:08:43 W Test test
+14:08:43 D Test 0.0.0.0:6061, 0.100000
+14:08:43 T Trace 中文调试信息
+14:08:43 D Log 日志系统关闭
+14:09:03 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:09:03 D Log 日志系统初始化
+14:09:03 L Test test
+14:09:03 D Test test
+14:09:03 S Test test
+14:09:03 E Test test
+14:09:03 W Test test
+14:09:03 D Test 0.0.0.0:6061, 0.100000
+14:09:03 T Trace 中文调试信息
+14:09:03 D Log 日志系统关闭
+14:09:45 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:09:45 D Log 日志系统初始化
+14:09:45 L Test test
+14:09:45 D Test test
+14:09:45 S Test test
+14:09:45 E Test test
+14:09:45 W Test test
+14:09:45 D Test 0.0.0.0:6061, 0.100000
+14:09:45 T Trace 中文调试信息
+14:09:45 D Log 日志系统关闭
+14:10:42 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:10:42 D Log 日志系统初始化
+14:10:42 L Test test
+14:10:42 D Test test
+14:10:42 S Test test
+14:10:42 E Test test
+14:10:42 W Test test
+14:10:42 D Test 0.0.0.0:6061, 0.100000
+14:10:42 T Trace 中文调试信息
+14:10:42 D Log 日志系统关闭
+14:11:25 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:11:25 D Log 日志系统初始化
+14:11:25 L Test test
+14:11:25 D Test test
+14:11:25 S Test test
+14:11:25 E Test test
+14:11:25 W Test test
+14:11:25 D Test 0.0.0.0:6061, 0.100000
+14:11:25 T Trace 中文调试信息
+14:11:25 D Log 日志系统关闭
+14:14:34 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:14:34 D Log 日志系统初始化
+14:14:34 L Test test
+14:14:34 D Test test
+14:14:34 S Test test
+14:14:34 E Test test
+14:14:34 W Test test
+14:14:34 D Test 0.0.0.0:6061, 0.100000
+14:14:34 T Trace 中文调试信息
+14:14:34 D Log 日志系统关闭
+14:15:28 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:15:28 D Log 日志系统初始化
+14:15:28 L Test test
+14:15:28 D Test test
+14:15:28 S Test test
+14:15:28 E Test test
+14:15:28 W Test test
+14:15:28 D Test 0.0.0.0:6061, 0.100000
+14:15:28 T Trace 中文调试信息
+14:15:28 D Log 日志系统关闭
+14:17:48 D Log 打开日志文件 logs/17.12.2011.log 成功
+14:17:48 D Log 日志系统初始化
+14:17:48 L Test test
+14:17:48 D Test test
+14:17:48 S Test test
+14:17:48 E Test test
+14:17:48 W Test test
+14:17:48 D Test 0.0.0.0:6061, 0.100000
+14:17:48 T Trace 中文调试信息
+14:17:48 D Log 日志系统关闭
+15:29:48 D Log 打开日志文件 logs/17.12.2011.log 成功
+15:29:48 D Log 日志系统初始化
+15:29:48 L Test test
+15:29:48 D Test test
+15:29:48 S Test test
+15:29:48 E Test test
+15:29:48 W Test test
+15:29:48 D Test 0.0.0.0:6061, 0.100000
+15:29:48 T Trace 中文调试信息
+15:29:48 D Log 日志系统关闭
+19:44:04 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:44:04 D Log 日志系统初始化
+19:44:04 L Test test
+19:44:04 D Test test
+19:44:04 S Test test
+19:44:04 E Test test
+19:44:04 W Test test
+19:44:04 D Test 0.0.0.0:6061, 0.100000
+19:44:04 T Trace 中文调试信息
+19:44:04 D Log 日志系统关闭
+19:44:07 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:44:07 D Log 日志系统初始化
+19:44:07 L Test test
+19:44:07 D Test test
+19:44:07 S Test test
+19:44:07 E Test test
+19:44:07 W Test test
+19:44:07 D Test 0.0.0.0:6061, 0.100000
+19:44:07 T Trace 中文调试信息
+19:44:07 D Log 日志系统关闭
+19:44:31 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:44:31 D Log 日志系统初始化
+19:44:31 L Test test
+19:44:31 D Test test
+19:44:31 S Test test
+19:44:31 E Test test
+19:44:31 W Test test
+19:44:31 D Test 0.0.0.0:6061, 0.100000
+19:44:31 T Trace 中文调试信息
+19:44:31 D Log 日志系统关闭
+19:44:51 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:44:51 D Log 日志系统初始化
+19:44:51 L Test test
+19:44:51 D Test test
+19:44:51 S Test test
+19:44:51 E Test test
+19:44:51 W Test test
+19:44:51 D Test 0.0.0.0:6061, 0.100000
+19:44:51 T Trace 中文调试信息
+19:44:51 D Log 日志系统关闭
+19:45:22 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:45:22 D Log 日志系统初始化
+19:45:22 L Test test
+19:45:22 D Test test
+19:45:22 S Test test
+19:45:22 E Test test
+19:45:22 W Test test
+19:45:22 D Test 0.0.0.0:6061, 0.100000
+19:45:22 T Trace 中文调试信息
+19:45:22 D Log 日志系统关闭
+19:45:42 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:45:42 D Log 日志系统初始化
+19:45:42 L Test test
+19:45:42 D Test test
+19:45:42 S Test test
+19:45:42 E Test test
+19:45:42 W Test test
+19:45:42 D Test 0.0.0.0:6061, 0.100000
+19:45:42 T Trace 中文调试信息
+19:45:42 D Log 日志系统关闭
+19:45:58 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:45:58 D Log 日志系统初始化
+19:45:58 L Test test
+19:45:58 D Test test
+19:45:58 S Test test
+19:45:58 E Test test
+19:45:58 W Test test
+19:45:58 D Test 0.0.0.0:6061, 0.100000
+19:45:58 T Trace 中文调试信息
+19:45:58 D Log 日志系统关闭
+19:46:13 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:46:13 D Log 日志系统初始化
+19:46:13 L Test test
+19:46:13 D Test test
+19:46:13 S Test test
+19:46:13 E Test test
+19:46:13 W Test test
+19:46:13 D Test 0.0.0.0:6061, 0.100000
+19:46:13 T Trace 中文调试信息
+19:46:13 D Log 日志系统关闭
+19:46:33 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:46:33 D Log 日志系统初始化
+19:46:33 L Test test
+19:46:33 D Test test
+19:46:33 S Test test
+19:46:33 E Test test
+19:46:33 W Test test
+19:46:33 D Test 0.0.0.0:6061, 0.100000
+19:46:33 T Trace 中文调试信息
+19:46:33 D Log 日志系统关闭
+19:47:15 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:47:15 D Log 日志系统初始化
+19:47:15 L Test test
+19:47:15 D Test test
+19:47:15 S Test test
+19:47:15 E Test test
+19:47:15 W Test test
+19:47:15 D Test 0.0.0.0:6061, 0.100000
+19:47:15 T Trace 中文调试信息
+19:47:15 D Log 日志系统关闭
+19:47:43 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:47:43 D Log 日志系统初始化
+19:47:43 L Test test
+19:47:43 D Test test
+19:47:43 S Test test
+19:47:43 E Test test
+19:47:43 W Test test
+19:47:43 D Test 0.0.0.0:6061, 0.100000
+19:47:43 T Trace 中文调试信息
+19:47:43 D Log 日志系统关闭
+19:48:01 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:48:01 D Log 日志系统初始化
+19:48:01 L Test test
+19:48:01 D Test test
+19:48:01 S Test test
+19:48:01 E Test test
+19:48:01 W Test test
+19:48:01 D Test 0.0.0.0:6061, 0.100000
+19:48:01 T Trace 中文调试信息
+19:48:01 D Log 日志系统关闭
+19:48:20 D Log 打开日志文件 logs/17.12.2011.log 成功
+19:48:20 D Log 日志系统初始化
+19:48:20 L Test test
+19:48:20 D Test test
+19:48:20 S Test test
+19:48:20 E Test test
+19:48:20 W Test test
+19:48:20 D Test 0.0.0.0:6061, 0.100000
+19:48:20 T Trace 中文调试信息
+19:48:20 D Log 日志系统关闭
+20:04:45 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:04:45 D Log 日志系统初始化
+20:04:45 L Test test
+20:04:45 D Test test
+20:04:45 S Test test
+20:04:45 E Test test
+20:04:45 W Test test
+20:04:45 D Test 0.0.0.0:6061, 0.100000
+20:04:45 T Trace 中文调试信息
+20:04:45 D Log 日志系统关闭
+20:05:53 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:05:53 D Log 日志系统初始化
+20:05:53 L Test test
+20:05:53 D Test test
+20:05:53 S Test test
+20:05:53 E Test test
+20:05:53 W Test test
+20:05:53 D Test 0.0.0.0:6061, 0.100000
+20:05:53 T Trace 中文调试信息
+20:05:53 D Log 日志系统关闭
+20:06:16 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:06:16 D Log 日志系统初始化
+20:06:16 L Test test
+20:06:16 D Test test
+20:06:16 S Test test
+20:06:16 E Test test
+20:06:16 W Test test
+20:06:16 D Test 0.0.0.0:6061, 0.100000
+20:06:16 T Trace 中文调试信息
+20:06:16 D Log 日志系统关闭
+20:06:53 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:06:53 D Log 日志系统初始化
+20:06:53 L Test test
+20:06:53 D Test test
+20:06:53 S Test test
+20:06:53 E Test test
+20:06:53 W Test test
+20:06:53 D Test 0.0.0.0:6061, 0.100000
+20:06:53 T Trace 中文调试信息
+20:06:53 D Log 日志系统关闭
+20:07:28 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:07:28 D Log 日志系统初始化
+20:07:28 L Test test
+20:07:28 D Test test
+20:07:28 S Test test
+20:07:28 E Test test
+20:07:28 W Test test
+20:07:28 D Test 0.0.0.0:6061, 0.100000
+20:07:28 T Trace 中文调试信息
+20:07:28 D Log 日志系统关闭
+20:08:10 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:08:10 D Log 日志系统初始化
+20:08:10 L Test test
+20:08:10 D Test test
+20:08:10 S Test test
+20:08:10 E Test test
+20:08:10 W Test test
+20:08:10 D Test 0.0.0.0:6061, 0.100000
+20:08:10 T Trace 中文调试信息
+20:08:10 D Log 日志系统关闭
+20:08:58 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:08:58 D Log 日志系统初始化
+20:08:58 L Test test
+20:08:58 D Test test
+20:08:58 S Test test
+20:08:58 E Test test
+20:08:58 W Test test
+20:08:58 D Test 0.0.0.0:6061, 0.100000
+20:08:58 T Trace 中文调试信息
+20:08:58 D Log 日志系统关闭
+20:10:10 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:10:10 D Log 日志系统初始化
+20:10:10 L Test test
+20:10:10 D Test test
+20:10:10 S Test test
+20:10:10 E Test test
+20:10:10 W Test test
+20:10:10 D Test 0.0.0.0:6061, 0.100000
+20:10:10 T Trace 中文调试信息
+20:10:10 D Log 日志系统关闭
+20:11:16 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:11:16 D Log 日志系统初始化
+20:11:16 L Test test
+20:11:16 D Test test
+20:11:16 S Test test
+20:11:16 E Test test
+20:11:16 W Test test
+20:11:16 D Test 0.0.0.0:6061, 0.100000
+20:11:16 T Trace 中文调试信息
+20:11:16 D Log 日志系统关闭
+20:11:51 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:11:51 D Log 日志系统初始化
+20:11:51 L Test test
+20:11:51 D Test test
+20:11:51 S Test test
+20:11:51 E Test test
+20:11:51 W Test test
+20:11:51 D Test 0.0.0.0:6061, 0.100000
+20:11:51 T Trace 中文调试信息
+20:11:51 D Log 日志系统关闭
+20:12:29 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:12:29 D Log 日志系统初始化
+20:12:29 L Test test
+20:12:29 D Test test
+20:12:29 S Test test
+20:12:29 E Test test
+20:12:29 W Test test
+20:12:29 D Test 0.0.0.0:6061, 0.100000
+20:12:29 T Trace 中文调试信息
+20:12:29 D Log 日志系统关闭
+20:13:40 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:13:40 D Log 日志系统初始化
+20:13:40 L Test test
+20:13:40 D Test test
+20:13:40 S Test test
+20:13:40 E Test test
+20:13:40 W Test test
+20:13:40 D Test 0.0.0.0:6061, 0.100000
+20:13:40 T Trace 中文调试信息
+20:13:40 D Log 日志系统关闭
+20:15:46 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:15:46 D Log 日志系统初始化
+20:15:46 L Test test
+20:15:46 D Test test
+20:15:46 S Test test
+20:15:46 E Test test
+20:15:46 W Test test
+20:15:46 D Test 0.0.0.0:6061, 0.100000
+20:15:46 T Trace 中文调试信息
+20:15:46 D Log 日志系统关闭
+20:32:52 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:32:52 D Log 日志系统初始化
+20:32:52 L Test test
+20:32:52 D Test test
+20:32:52 S Test test
+20:32:52 E Test test
+20:32:52 W Test test
+20:32:52 D Test 0.0.0.0:6061, 0.100000
+20:32:52 T Trace 中文调试信息
+20:32:52 D Log 日志系统关闭
+20:34:47 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:34:47 D Log 日志系统初始化
+20:34:47 L Test test
+20:34:47 D Test test
+20:34:47 S Test test
+20:34:47 E Test test
+20:34:47 W Test test
+20:34:47 D Test 0.0.0.0:6061, 0.100000
+20:34:47 T Trace 中文调试信息
+20:34:47 T Trace 监听完成
+20:37:23 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:37:23 D Log 日志系统初始化
+20:37:23 L Test test
+20:37:23 D Test test
+20:37:23 S Test test
+20:37:23 E Test test
+20:37:23 W Test test
+20:37:23 D Test 0.0.0.0:6061, 0.100000
+20:37:23 T Trace 中文调试信息
+20:37:23 T Trace 监听完成
+20:37:39 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:37:39 D Log 日志系统初始化
+20:37:39 L Test test
+20:37:39 D Test test
+20:37:39 S Test test
+20:37:39 E Test test
+20:37:39 W Test test
+20:37:39 D Test 0.0.0.0:6061, 0.100000
+20:37:39 T Trace 中文调试信息
+20:37:39 T Trace 监听完成
+20:38:00 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:38:00 D Log 日志系统初始化
+20:38:00 L Test test
+20:38:00 D Test test
+20:38:00 S Test test
+20:38:00 E Test test
+20:38:00 W Test test
+20:38:00 D Test 0.0.0.0:6061, 0.100000
+20:38:00 T Trace 中文调试信息
+20:38:00 T Trace 监听完成
+20:38:32 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:38:32 D Log 日志系统初始化
+20:38:32 L Test test
+20:38:32 D Test test
+20:38:32 S Test test
+20:38:32 E Test test
+20:38:32 W Test test
+20:38:32 D Test 0.0.0.0:6061, 0.100000
+20:38:32 T Trace 中文调试信息
+20:38:32 T Trace 监听完成
+20:38:43 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:38:43 D Log 日志系统初始化
+20:38:43 D TCP服务启动成功 %s:%s 0.0.0.0
+20:39:11 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:39:11 D Log 日志系统初始化
+20:39:11 D TCP服务启动成功 %s:%s 0.0.0.0
+20:39:22 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:39:22 D Log 日志系统初始化
+20:39:22 D Net TCP服务启动成功 0.0.0.0:6061
+20:40:29 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:40:29 D Log 日志系统初始化
+20:40:29 D Net TCP服务启动成功 0.0.0.0:6061
+20:41:35 D Net 有连接进入
+20:52:39 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:52:39 D Log 日志系统初始化
+20:52:39 D Net TCP服务启动成功 0.0.0.0:6061
+20:56:14 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:56:14 D Log 日志系统初始化
+20:56:14 D Net TCP服务启动成功 0.0.0.0:6061
+20:56:59 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:56:59 D Log 日志系统初始化
+20:56:59 D Net TCP服务启动成功 0.0.0.0:6061
+20:57:12 D Net 192.168.1.100 连接进入
+20:57:27 D Net 192.168.1.100 连接进入
+20:58:38 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:58:38 D Log 日志系统初始化
+20:58:38 D Net TCP服务启动成功 0.0.0.0:6061
+20:59:30 D Log 打开日志文件 logs/17.12.2011.log 成功
+20:59:30 D Log 日志系统初始化
+20:59:30 D Net TCP服务启动成功 0.0.0.0:6061
+20:59:42 D Net 192.168.1.100 连接进入
+20:59:44 D Net 192.168.1.100 连接离开
+21:06:16 D Log 打开日志文件 logs/17.12.2011.log 成功
+21:06:16 D Log 日志系统初始化
+21:06:16 D Net TCP服务启动成功 0.0.0.0:6061
+21:06:54 D Net 192.168.1.100 连接进入
+21:06:56 D Net 192.168.1.100 连接离开 Success
+21:28:18 D Log 打开日志文件 logs/17.12.2011.log 成功
+21:28:18 D Log 日志系统初始化
+21:28:18 D Net TCP服务启动成功 0.0.0.0:6061

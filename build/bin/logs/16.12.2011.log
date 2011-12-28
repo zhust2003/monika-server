@@ -1,0 +1,10 @@
+16:53:22 D Log 打开日志文件 logs/16.12.2011.log 成功
+16:53:22 D Log 日志系统初始化
+16:53:22 L Test test
+16:53:22 D Test test
+16:53:22 S Test test
+16:53:22 E Test test
+16:53:22 W Test test
+16:53:22 D Test 0.0.0.0:6061, 0.100000
+16:53:22 T Trace 中文调试信息
+16:53:22 D Log 日志系统关闭

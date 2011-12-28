@@ -1,0 +1,186 @@
+15:27:01 D Log 打开日志文件 logs/26.12.2011.log 成功
+15:27:01 D Log 日志系统初始化
+15:27:01 D Net TCP服务启动成功 6061
+15:27:01 T Trace tick
+15:27:01 T Trace tick
+15:27:01 T Trace tick
+15:27:01 T Trace tick
+15:27:01 T Trace tick
+15:27:02 T Trace tick
+15:27:02 T Trace tick
+15:27:02 T Trace tick
+15:27:02 T Trace tick
+15:27:02 T Trace tick
+15:27:02 L Signal 捕获信号 2
+15:27:02 D Net 网络从线程 0 [0x9d71a38] 退出
+15:27:02 D Net 网络从线程 1 [0x9d71c38] 退出
+15:27:02 D Net 网络从线程 2 [0x9d71e30] 退出
+15:27:02 D Conn 连接被回收
+15:27:02 D Log 日志系统关闭
+15:29:37 D Log 打开日志文件 logs/26.12.2011.log 成功
+15:29:37 D Log 日志系统初始化
+15:29:37 T Trace dt -2000
+15:29:37 D Net TCP服务启动成功 6061
+15:29:37 T Trace tick
+15:29:38 T Trace tick
+15:29:38 T Trace tick
+15:29:38 T Trace tick
+15:29:38 T Trace tick
+15:29:38 T Trace tick
+15:29:38 T Trace tick
+15:29:38 T Trace tick
+15:29:38 T Trace tick
+15:29:38 T Trace tick
+15:29:38 T Trace tick
+15:29:39 T Trace tick
+15:29:39 L Signal 捕获信号 2
+15:29:39 D Net 网络从线程 0 [0x8e50a60] 退出
+15:29:39 D Net 网络从线程 1 [0x8e50c60] 退出
+15:29:39 D Net 网络从线程 2 [0x8e50e58] 退出
+15:29:39 D Conn 连接被回收
+15:29:39 D Log 日志系统关闭
+15:30:19 D Log 打开日志文件 logs/26.12.2011.log 成功
+15:30:19 D Log 日志系统初始化
+15:30:19 T Trace dt -2
+15:30:19 D Net TCP服务启动成功 6061
+15:30:19 T Trace tick
+15:30:19 T Trace tick
+15:30:19 T Trace tick
+15:30:19 T Trace tick
+15:30:19 T Trace tick
+15:30:19 T Trace tick
+15:30:19 T Trace tick
+15:30:19 T Trace tick
+15:30:20 T Trace tick
+15:30:20 T Trace tick
+15:30:20 L Signal 捕获信号 2
+15:30:20 D Net 网络从线程 0 [0x8237a60] 退出
+15:30:20 D Net 网络从线程 1 [0x8237c60] 退出
+15:30:20 D Net 网络从线程 2 [0x8237e58] 退出
+15:30:20 D Conn 连接被回收
+15:30:20 D Log 日志系统关闭
+15:37:43 D Log 打开日志文件 logs/26.12.2011.log 成功
+15:37:43 D Log 日志系统初始化
+15:37:43 T Trace dt 102474
+15:37:43 D Net TCP服务启动成功 6061
+15:37:43 T Trace tick
+15:37:44 T Trace tick
+15:37:44 T Trace tick
+15:37:44 T Trace tick
+15:37:44 T Trace tick
+15:37:44 T Trace tick
+15:37:44 T Trace tick
+15:37:44 T Trace tick
+15:37:44 T Trace tick
+15:37:44 T Trace tick
+15:37:44 T Trace tick
+15:37:45 T Trace tick
+15:37:45 L Signal 捕获信号 2
+15:37:45 D Net 网络从线程 0 [0x887da60] 退出
+15:37:45 D Net 网络从线程 1 [0x887dc60] 退出
+15:37:45 D Net 网络从线程 2 [0x887de58] 退出
+15:37:45 D Conn 连接被回收
+15:37:45 D Log 日志系统关闭
+15:40:26 D Log 打开日志文件 logs/26.12.2011.log 成功
+15:40:26 D Log 日志系统初始化
+15:40:26 T Trace dt 101448
+15:40:26 D Net TCP服务启动成功 6061
+15:40:26 T Trace tick
+15:40:26 T Trace tick
+15:40:26 T Trace tick
+15:40:27 T Trace tick
+15:40:27 T Trace tick
+15:40:27 T Trace tick
+15:40:27 T Trace tick
+15:40:27 T Trace tick
+15:40:27 T Trace tick
+15:40:27 T Trace tick
+15:40:27 T Trace tick
+15:40:27 L Signal 捕获信号 2
+15:40:27 D Net 网络从线程 0 [0x91eca60] 退出
+15:40:27 D Net 网络从线程 1 [0x91ecc60] 退出
+15:40:27 D Net 网络从线程 2 [0x91ece68] 退出
+15:40:27 D Conn 连接被回收
+15:40:27 D Log 日志系统关闭
+15:42:20 D Log 打开日志文件 logs/26.12.2011.log 成功
+15:42:20 D Log 日志系统初始化
+15:42:20 T Trace dt 102
+15:42:20 D Net TCP服务启动成功 6061
+15:42:20 T Trace tick
+15:42:20 T Trace tick
+15:42:20 T Trace tick
+15:42:21 T Trace tick
+15:42:21 T Trace tick
+15:42:21 T Trace tick
+15:42:21 T Trace tick
+15:42:21 T Trace tick
+15:42:21 T Trace tick
+15:42:21 T Trace tick
+15:42:21 T Trace tick
+15:42:21 T Trace tick
+15:42:21 T Trace tick
+15:42:22 T Trace tick
+15:42:22 L Signal 捕获信号 2
+15:42:22 D Net 网络从线程 0 [0x96c5a60] 退出
+15:42:22 D Net 网络从线程 1 [0x96c5c60] 退出
+15:42:22 D Net 网络从线程 2 [0x96c5e78] 退出
+15:42:22 D Conn 连接被回收
+15:42:22 D Log 日志系统关闭
+2011-Dec-26 16:13:06.180135 D Log 打开日志文件 logs/26.12.2011.log 成功
+2011-Dec-26 16:13:06.181481 D Log 日志系统初始化
+2011-Dec-26 16:13:06.182509 D Net TCP服务启动成功 6061
+2011-Dec-26 16:13:06.185375 T Trace tick
+2011-Dec-26 16:13:06.286758 T Trace tick
+2011-Dec-26 16:13:06.387748 T Trace tick
+2011-Dec-26 16:13:06.489750 T Trace tick
+2011-Dec-26 16:13:06.591752 T Trace tick
+2011-Dec-26 16:13:06.693772 T Trace tick
+2011-Dec-26 16:13:06.795752 T Trace tick
+2011-Dec-26 16:13:06.897759 T Trace tick
+2011-Dec-26 16:13:06.999791 T Trace tick
+2011-Dec-26 16:13:07.101797 T Trace tick
+2011-Dec-26 16:13:07.203832 T Trace tick
+2011-Dec-26 16:13:07.305797 T Trace tick
+2011-Dec-26 16:13:07.407793 T Trace tick
+2011-Dec-26 16:13:07.509834 T Trace tick
+2011-Dec-26 16:13:07.611811 T Trace tick
+2011-Dec-26 16:13:07.713896 T Trace tick
+2011-Dec-26 16:13:07.814819 T Trace tick
+2011-Dec-26 16:13:07.916761 T Trace tick
+2011-Dec-26 16:13:08.011365 L Signal 捕获信号 2
+2011-Dec-26 16:13:08.012354 D Net 网络从线程 0 [0x8b65b20] 退出
+2011-Dec-26 16:13:08.013558 D Net 网络从线程 1 [0x8b65d20] 退出
+2011-Dec-26 16:13:08.014417 D Net 网络从线程 2 [0x8b65f18] 退出
+2011-Dec-26 16:13:08.018938 D Conn 连接被回收
+2011-Dec-26 16:13:08.020010 D Log 日志系统关闭
+2011-Dec-26 16:16:00.796277 D Log 打开日志文件 logs/26.12.2011.log 成功
+2011-Dec-26 16:16:00.797449 D Log 日志系统初始化
+2011-Dec-26 16:16:00.799171 D Net TCP服务启动成功 6061
+2011-Dec-26 16:16:00.801240 T Trace tick
+2011-Dec-26 16:16:00.905842 T Trace tick
+2011-Dec-26 16:16:01.006881 T Trace tick
+2011-Dec-26 16:16:01.108951 T Trace tick
+2011-Dec-26 16:16:01.211026 T Trace tick
+2011-Dec-26 16:16:01.311978 T Trace tick
+2011-Dec-26 16:16:01.412862 T Trace tick
+2011-Dec-26 16:16:01.514913 T Trace tick
+2011-Dec-26 16:16:01.616895 T Trace tick
+2011-Dec-26 16:16:01.718861 T Trace tick
+2011-Dec-26 16:16:01.820907 T Trace tick
+2011-Dec-26 16:16:01.922813 T Trace tick
+2011-Dec-26 16:16:02.024794 T Trace tick
+2011-Dec-26 16:16:02.126769 T Trace tick
+2011-Dec-26 16:16:02.228796 T Trace tick
+2011-Dec-26 16:16:02.330798 T Trace tick
+2011-Dec-26 16:16:02.433003 T Trace tick
+2011-Dec-26 16:16:02.534807 T Trace tick
+2011-Dec-26 16:16:02.636760 T Trace tick
+2011-Dec-26 16:16:02.738772 T Trace tick
+2011-Dec-26 16:16:02.840792 T Trace tick
+2011-Dec-26 16:16:02.942754 T Trace tick
+2011-Dec-26 16:16:02.951853 L Signal 捕获信号 2
+2011-Dec-26 16:16:02.953070 D Net 网络从线程 0 [0x9904b20] 退出
+2011-Dec-26 16:16:02.954004 D Net 网络从线程 1 [0x9904d20] 退出
+2011-Dec-26 16:16:02.954986 D Net 网络从线程 2 [0x9904f18] 退出
+2011-Dec-26 16:16:03.044937 D Conn 连接被回收
+2011-Dec-26 16:16:03.046028 D Log 日志系统关闭

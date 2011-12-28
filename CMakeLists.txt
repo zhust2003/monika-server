@@ -1,0 +1,14 @@
+# CMake build system file
+# Author: dalton
+#
+
+
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6 FATAL_ERROR)
+
+PROJECT("MONIKA")
+
+# 设置debug与release的编译参数
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O2 -Wall")
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb")
+
+ADD_SUBDIRECTORY("src" "bin")

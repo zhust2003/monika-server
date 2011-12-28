@@ -1,0 +1,394 @@
+==5820== Memcheck, a memory error detector
+==5820== Copyright (C) 2002-2009, and GNU GPL'd, by Julian Seward et al.
+==5820== Using Valgrind-3.5.0 and LibVEX; rerun with -h for copyright info
+==5820== Command: ./monika
+==5820== 
+2011-Dec-27 16:15:38.390699[36;01m D[37;01m Log [36;01m打开日志文件 logs/27.12.2011.log 成功
+[00m2011-Dec-27 16:15:38.567545[36;01m D[37;01m Log [36;01m日志系统初始化
+[00m2011-Dec-27 16:15:38.570649[36;01m D[37;01m Net [36;01mTCP服务启动成功 6061
+[00m2011-Dec-27 16:15:44.439230[36;01m D[37;01m Net [36;01m127.0.0.1 连接进入
+[00m2011-Dec-27 16:15:44.510724[34;01m T[37;01m Trace [34;01m接收到完整的包, xxxxxxxxxx
+[00m2011-Dec-27 16:15:45.260077[34;01m T[37;01m Trace [34;01m接收到完整的包, xxxxxxxxxx
+[00m2011-Dec-27 16:15:45.934864[36;01m D[37;01m Net [36;01m127.0.0.1 连接离开
+[00m2011-Dec-27 16:15:45.964473[36;01m D[37;01m Conn [36;01m连接被回收
+[00m2011-Dec-27 16:15:48.271658[36;01m D[37;01m Net [36;01m127.0.0.1 连接进入
+[00m2011-Dec-27 16:15:48.275841[34;01m T[37;01m Trace [34;01m接收到完整的包, xxxxxxxxxx
+[00m2011-Dec-27 16:15:49.272438[34;01m T[37;01m Trace [34;01m接收到完整的包, xxxxxxxxxx
+[00m2011-Dec-27 16:15:49.886905[36;01m D[37;01m Net [36;01m127.0.0.1 连接离开
+[00m2011-Dec-27 16:15:49.943905[36;01m D[37;01m Conn [36;01m连接被回收
+[00m2011-Dec-27 16:15:54.572953[00m L[37;01m Signal [00m捕获信号 2
+[00m2011-Dec-27 16:15:54.666278[36;01m D[37;01m Conn [36;01m连接被回收
+[00m2011-Dec-27 16:15:54.773637[36;01m D[37;01m Log [36;01m日志系统关闭
+[00m==5820== 
+==5820== HEAP SUMMARY:
+==5820==     in use at exit: 2,748 bytes in 35 blocks
+==5820==   total heap usage: 331 allocs, 296 frees, 43,918 bytes allocated
+==5820== 
+==5820== 8 bytes in 1 blocks are still reachable in loss record 1 of 23
+==5820==    at 0x4005B83: malloc (vg_replace_malloc.c:195)
+==5820==    by 0x402C9BB: boost::detail::get_once_per_thread_epoch() (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0x4026E26: void boost::call_once<void (*)()>(boost::once_flag&, void (*)()) (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0x40239F9: boost::detail::set_current_thread_data(boost::detail::thread_data_base*) (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0x4025604: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 8 bytes in 1 blocks are still reachable in loss record 2 of 23
+==5820==    at 0x4005B83: malloc (vg_replace_malloc.c:195)
+==5820==    by 0x402C9BB: boost::detail::get_once_per_thread_epoch() (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0x4026E26: void boost::call_once<void (*)()>(boost::once_flag&, void (*)()) (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0x4023A49: boost::detail::get_current_thread_data() (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0x402C221: boost::condition_variable::wait(boost::unique_lock<boost::mutex>&) (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0x40266EE: boost::thread::join() (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0x80762D2: main (Main.cpp:112)
+==5820== 
+==5820== 16 bytes in 1 blocks are still reachable in loss record 3 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x808314B: boost::detail::shared_count::shared_count<boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > > >(boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >*) (shared_count.hpp:91)
+==5820==    by 0x80831C7: boost::shared_ptr<boost::detail::thread_data_base>::shared_ptr<boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > > >(boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >*) (shared_ptr.hpp:183)
+==5820==    by 0x8087F7F: boost::shared_ptr<boost::detail::thread_data_base> boost::thread::make_thread_info<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >(boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >) (thread.hpp:140)
+==5820==    by 0x8087FB2: boost::thread::thread<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >(boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >, boost::disable_if<boost::is_convertible<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >&, boost::detail::thread_move_t<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > > >, boost::thread::dummy*>::type) (thread.hpp:202)
+==5820==    by 0x80761ED: main (Main.cpp:107)
+==5820== 
+==5820== 16 bytes in 2 blocks are still reachable in loss record 4 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40B9DAC: ServicePool::ServicePool(unsigned int) (ServicePool.cpp:11)
+==5820==    by 0x409AB98: TcpServer::TcpServer(unsigned short, unsigned int) (TcpServer.cpp:9)
+==5820==    by 0x8076149: main (Main.cpp:105)
+==5820== 
+==5820== 22 bytes in 1 blocks are possibly lost in loss record 5 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x417313A: std::string::_Rep::_S_create(unsigned int, unsigned int, std::allocator<char> const&) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x41741A4: ??? (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x41744DE: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*>(char*, char*, std::allocator<char> const&) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x416D6C9: std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x416D91B: std::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >::str() const (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x40BA342: ServicePool::run() (ServicePool.cpp:33)
+==5820==    by 0x409A6AB: TcpServer::run() (TcpServer.cpp:46)
+==5820==    by 0x807CEB5: boost::_mfi::mf0<void, TcpServer>::operator()(TcpServer*) const (mem_fn_template.hpp:49)
+==5820==    by 0x807CF0D: void boost::_bi::list1<boost::_bi::value<TcpServer*> >::operator()<boost::_mfi::mf0<void, TcpServer>, boost::_bi::list0>(boost::_bi::type<void>, boost::_mfi::mf0<void, TcpServer>&, boost::_bi::list0&, int) (bind.hpp:253)
+==5820==    by 0x807CF50: boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x807CF69: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 24 bytes in 1 blocks are still reachable in loss record 6 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40A4838: boost::asio::io_service::service* boost::asio::detail::service_registry::create<boost::asio::stream_socket_service<boost::asio::ip::tcp> >(boost::asio::io_service&) (service_registry.hpp:81)
+==5820==    by 0x40A2855: boost::asio::detail::service_registry::do_use_service(boost::asio::io_service::service::key const&, boost::asio::io_service::service* (*)(boost::asio::io_service&)) (service_registry.ipp:123)
+==5820==    by 0x40A2969: boost::asio::stream_socket_service<boost::asio::ip::tcp>& boost::asio::detail::service_registry::use_service<boost::asio::stream_socket_service<boost::asio::ip::tcp> >() (service_registry.hpp:48)
+==5820==    by 0x40A298E: boost::asio::stream_socket_service<boost::asio::ip::tcp>& boost::asio::use_service<boost::asio::stream_socket_service<boost::asio::ip::tcp> >(boost::asio::io_service&) (io_service.hpp:33)
+==5820==    by 0x40A29B2: boost::asio::basic_io_object<boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_io_object(boost::asio::io_service&) (basic_io_object.hpp:90)
+==5820==    by 0x40A78D5: boost::asio::basic_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_socket(boost::asio::io_service&) (basic_socket.hpp:69)
+==5820==    by 0x40A790B: boost::asio::basic_stream_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_stream_socket(boost::asio::io_service&) (basic_stream_socket.hpp:72)
+==5820==    by 0x40A8391: Connection::Connection(boost::asio::io_service&) (Connection.h:20)
+==5820==    by 0x409A449: TcpServer::startAccept() (TcpServer.cpp:59)
+==5820==    by 0x409AD39: TcpServer::TcpServer(unsigned short, unsigned int) (TcpServer.cpp:33)
+==5820==    by 0x8076149: main (Main.cpp:105)
+==5820== 
+==5820== 24 bytes in 1 blocks are still reachable in loss record 7 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40A4838: boost::asio::io_service::service* boost::asio::detail::service_registry::create<boost::asio::stream_socket_service<boost::asio::ip::tcp> >(boost::asio::io_service&) (service_registry.hpp:81)
+==5820==    by 0x40A2855: boost::asio::detail::service_registry::do_use_service(boost::asio::io_service::service::key const&, boost::asio::io_service::service* (*)(boost::asio::io_service&)) (service_registry.ipp:123)
+==5820==    by 0x40A2969: boost::asio::stream_socket_service<boost::asio::ip::tcp>& boost::asio::detail::service_registry::use_service<boost::asio::stream_socket_service<boost::asio::ip::tcp> >() (service_registry.hpp:48)
+==5820==    by 0x40A298E: boost::asio::stream_socket_service<boost::asio::ip::tcp>& boost::asio::use_service<boost::asio::stream_socket_service<boost::asio::ip::tcp> >(boost::asio::io_service&) (io_service.hpp:33)
+==5820==    by 0x40A29B2: boost::asio::basic_io_object<boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_io_object(boost::asio::io_service&) (basic_io_object.hpp:90)
+==5820==    by 0x40A78D5: boost::asio::basic_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_socket(boost::asio::io_service&) (basic_socket.hpp:69)
+==5820==    by 0x40A790B: boost::asio::basic_stream_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_stream_socket(boost::asio::io_service&) (basic_stream_socket.hpp:72)
+==5820==    by 0x40A8391: Connection::Connection(boost::asio::io_service&) (Connection.h:20)
+==5820==    by 0x409A449: TcpServer::startAccept() (TcpServer.cpp:59)
+==5820==    by 0x409A5C3: TcpServer::handleAccept(boost::system::error_code const&) (TcpServer.cpp:71)
+==5820==    by 0x409DC02: boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>::operator()(TcpServer*, boost::system::error_code const&) const (mem_fn_template.hpp:165)
+==5820==    by 0x409DC93: void boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()>::operator()<boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list1<boost::system::error_code const&> >(boost::_bi::type<void>, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>&, boost::_bi::list1<boost::system::error_code const&>&, int) (bind.hpp:313)
+==5820==    by 0x409DCEB: void boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >::operator()<boost::system::error_code>(boost::system::error_code const&) (bind_template.hpp:47)
+==5820==    by 0x409DD18: boost::asio::detail::binder1<boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >, boost::system::error_code>::operator()() (bind_handler.hpp:46)
+==5820==    by 0x409DD3C: void boost::asio::asio_handler_invoke<boost::asio::detail::binder1<boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >, boost::system::error_code> >(boost::asio::detail::binder1<boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >, boost::system::error_code>, ...) (handler_invoke_hook.hpp:64)
+==5820==    by 0x409DD8D: void boost_asio_handler_invoke_helpers::invoke<boost::asio::detail::binder1<boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >, boost::system::error_code>, boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> > >(boost::asio::detail::binder1<boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >, boost::system::error_code>&, boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >&) (handler_invoke_helpers.hpp:39)
+==5820==    by 0x409F41D: boost::asio::detail::reactive_socket_accept_op<boost::asio::basic_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >, boost::asio::ip::tcp, boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> > >::do_complete(boost::asio::detail::task_io_service*, boost::asio::detail::task_io_service_operation*, boost::system::error_code const&, unsigned int) (reactive_socket_accept_op.hpp:123)
+==5820==    by 0x409B678: boost::asio::detail::task_io_service_operation::complete(boost::asio::detail::task_io_service&, boost::system::error_code const&, unsigned int) (task_io_service_operation.hpp:37)
+==5820==    by 0x40A6A4F: boost::asio::detail::epoll_reactor::descriptor_state::do_complete(boost::asio::detail::task_io_service*, boost::asio::detail::task_io_service_operation*, boost::system::error_code const&, unsigned int) (epoll_reactor.ipp:655)
+==5820==    by 0x409B678: boost::asio::detail::task_io_service_operation::complete(boost::asio::detail::task_io_service&, boost::system::error_code const&, unsigned int) (task_io_service_operation.hpp:37)
+==5820==    by 0x40B17C4: boost::asio::detail::task_io_service::do_run_one(boost::asio::detail::scoped_lock<boost::asio::detail::posix_mutex>&, boost::asio::detail::task_io_service::thread_info&, boost::asio::detail::op_queue<boost::asio::detail::task_io_service_operation>&, boost::system::error_code const&) (task_io_service.ipp:366)
+==5820==    by 0x40B1973: boost::asio::detail::task_io_service::run(boost::system::error_code&) (task_io_service.ipp:146)
+==5820==    by 0x40B1A69: boost::asio::io_service::run() (io_service.ipp:59)
+==5820==    by 0x40BB9A7: unsigned int boost::_mfi::mf0<unsigned int, boost::asio::io_service>::call<boost::shared_ptr<boost::asio::io_service> >(boost::shared_ptr<boost::asio::io_service>&, void const*) const (mem_fn_template.hpp:40)
+==5820==    by 0x40BB9DF: unsigned int boost::_mfi::mf0<unsigned int, boost::asio::io_service>::operator()<boost::shared_ptr<boost::asio::io_service> >(boost::shared_ptr<boost::asio::io_service>&) const (mem_fn_template.hpp:55)
+==5820==    by 0x40BBA2B: unsigned int boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > >::operator()<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list0>(boost::_bi::type<unsigned int>, boost::_mfi::mf0<unsigned int, boost::asio::io_service>&, boost::_bi::list0&, long) (bind.hpp:243)
+==5820==    by 0x40BBA7C: boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x40BBAA5: boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 24 bytes in 3 blocks are still reachable in loss record 8 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40BA163: ServicePool::run() (ServicePool.cpp:24)
+==5820==    by 0x409A6AB: TcpServer::run() (TcpServer.cpp:46)
+==5820==    by 0x807CEB5: boost::_mfi::mf0<void, TcpServer>::operator()(TcpServer*) const (mem_fn_template.hpp:49)
+==5820==    by 0x807CF0D: void boost::_bi::list1<boost::_bi::value<TcpServer*> >::operator()<boost::_mfi::mf0<void, TcpServer>, boost::_bi::list0>(boost::_bi::type<void>, boost::_mfi::mf0<void, TcpServer>&, boost::_bi::list0&, int) (bind.hpp:253)
+==5820==    by 0x807CF50: boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x807CF69: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 32 bytes in 1 blocks are still reachable in loss record 9 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40BCE91: __gnu_cxx::new_allocator<boost::shared_ptr<boost::thread> >::allocate(unsigned int, void const*) (new_allocator.h:88)
+==5820==    by 0x40BCEC5: std::_Vector_base<boost::shared_ptr<boost::thread>, std::allocator<boost::shared_ptr<boost::thread> > >::_M_allocate(unsigned int) (stl_vector.h:127)
+==5820==    by 0x40BD055: std::vector<boost::shared_ptr<boost::thread>, std::allocator<boost::shared_ptr<boost::thread> > >::_M_insert_aux(__gnu_cxx::__normal_iterator<boost::shared_ptr<boost::thread>*, std::vector<boost::shared_ptr<boost::thread>, std::allocator<boost::shared_ptr<boost::thread> > > >, boost::shared_ptr<boost::thread> const&) (vector.tcc:275)
+==5820==    by 0x40BD2F6: std::vector<boost::shared_ptr<boost::thread>, std::allocator<boost::shared_ptr<boost::thread> > >::push_back(boost::shared_ptr<boost::thread> const&) (stl_vector.h:610)
+==5820==    by 0x40BA22D: ServicePool::run() (ServicePool.cpp:25)
+==5820==    by 0x409A6AB: TcpServer::run() (TcpServer.cpp:46)
+==5820==    by 0x807CEB5: boost::_mfi::mf0<void, TcpServer>::operator()(TcpServer*) const (mem_fn_template.hpp:49)
+==5820==    by 0x807CF0D: void boost::_bi::list1<boost::_bi::value<TcpServer*> >::operator()<boost::_mfi::mf0<void, TcpServer>, boost::_bi::list0>(boost::_bi::type<void>, boost::_mfi::mf0<void, TcpServer>&, boost::_bi::list0&, int) (bind.hpp:253)
+==5820==    by 0x807CF50: boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x807CF69: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 32 bytes in 2 blocks are still reachable in loss record 10 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40BCAAF: boost::detail::shared_count::shared_count<boost::asio::io_service>(boost::asio::io_service*) (shared_count.hpp:91)
+==5820==    by 0x40BCB36: boost::shared_ptr<boost::asio::io_service>::shared_ptr<boost::asio::io_service>(boost::asio::io_service*) (shared_ptr.hpp:183)
+==5820==    by 0x40B9DCC: ServicePool::ServicePool(unsigned int) (ServicePool.cpp:11)
+==5820==    by 0x409AB98: TcpServer::TcpServer(unsigned short, unsigned int) (TcpServer.cpp:9)
+==5820==    by 0x8076149: main (Main.cpp:105)
+==5820== 
+==5820== 32 bytes in 2 blocks are still reachable in loss record 11 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40BC7B9: boost::detail::shared_count::shared_count<boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > > >(boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >*) (shared_count.hpp:91)
+==5820==    by 0x40BC841: boost::shared_ptr<boost::detail::thread_data_base>::shared_ptr<boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > > >(boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >*) (shared_ptr.hpp:183)
+==5820==    by 0x40BC8CD: boost::shared_ptr<boost::detail::thread_data_base> boost::thread::make_thread_info<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >(boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >) (thread.hpp:140)
+==5820==    by 0x40BC910: boost::thread::thread<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >(boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >, boost::disable_if<boost::is_convertible<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >&, boost::detail::thread_move_t<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > > >, boost::thread::dummy*>::type) (thread.hpp:202)
+==5820==    by 0x40BA189: ServicePool::run() (ServicePool.cpp:24)
+==5820==    by 0x409A6AB: TcpServer::run() (TcpServer.cpp:46)
+==5820==    by 0x807CEB5: boost::_mfi::mf0<void, TcpServer>::operator()(TcpServer*) const (mem_fn_template.hpp:49)
+==5820==    by 0x807CF0D: void boost::_bi::list1<boost::_bi::value<TcpServer*> >::operator()<boost::_mfi::mf0<void, TcpServer>, boost::_bi::list0>(boost::_bi::type<void>, boost::_mfi::mf0<void, TcpServer>&, boost::_bi::list0&, int) (bind.hpp:253)
+==5820==    by 0x807CF50: boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x807CF69: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 48 bytes in 3 blocks are still reachable in loss record 12 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x8088143: boost::detail::shared_count::shared_count<boost::thread>(boost::thread*) (shared_count.hpp:91)
+==5820==    by 0x80881BE: boost::shared_ptr<boost::thread>::shared_ptr<boost::thread>(boost::thread*) (shared_ptr.hpp:183)
+==5820==    by 0x40BA19E: ServicePool::run() (ServicePool.cpp:24)
+==5820==    by 0x409A6AB: TcpServer::run() (TcpServer.cpp:46)
+==5820==    by 0x807CEB5: boost::_mfi::mf0<void, TcpServer>::operator()(TcpServer*) const (mem_fn_template.hpp:49)
+==5820==    by 0x807CF0D: void boost::_bi::list1<boost::_bi::value<TcpServer*> >::operator()<boost::_mfi::mf0<void, TcpServer>, boost::_bi::list0>(boost::_bi::type<void>, boost::_mfi::mf0<void, TcpServer>&, boost::_bi::list0&, int) (bind.hpp:253)
+==5820==    by 0x807CF50: boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x807CF69: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 57 bytes in 1 blocks are possibly lost in loss record 13 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x417313A: std::string::_Rep::_S_create(unsigned int, unsigned int, std::allocator<char> const&) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x4173CD7: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned int) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x4174887: std::string::reserve(unsigned int) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x4174CEC: std::string::append(std::string const&) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x807FD7E: std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:2070)
+==5820==    by 0x4099DDD: std::basic_string<char, std::char_traits<char>, std::allocator<char> > boost::posix_time::to_simple_string_type<char>(boost::posix_time::ptime) (time_formatters.hpp:177)
+==5820==    by 0x4099E9F: boost::posix_time::to_simple_string(boost::posix_time::ptime) (time_formatters.hpp:184)
+==5820==    by 0x4093C15: Logger::printTime() (Logger.cpp:125)
+==5820==    by 0x4093CCA: Logger::printMsg(Logger::Color, char, char const*, char const*, char*) (Logger.cpp:147)
+==5820==    by 0x4093EF5: Logger::debug(char const*, char const*, ...) (Logger.cpp:71)
+==5820==    by 0x40BA38A: ServicePool::run() (ServicePool.cpp:33)
+==5820==    by 0x409A6AB: TcpServer::run() (TcpServer.cpp:46)
+==5820==    by 0x807CEB5: boost::_mfi::mf0<void, TcpServer>::operator()(TcpServer*) const (mem_fn_template.hpp:49)
+==5820==    by 0x807CF0D: void boost::_bi::list1<boost::_bi::value<TcpServer*> >::operator()<boost::_mfi::mf0<void, TcpServer>, boost::_bi::list0>(boost::_bi::type<void>, boost::_mfi::mf0<void, TcpServer>&, boost::_bi::list0&, int) (bind.hpp:253)
+==5820==    by 0x807CF50: boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x807CF69: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 72 bytes in 2 blocks are still reachable in loss record 14 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40AE421: boost::asio::io_service::io_service() (io_service.ipp:40)
+==5820==    by 0x40B9DBA: ServicePool::ServicePool(unsigned int) (ServicePool.cpp:11)
+==5820==    by 0x409AB98: TcpServer::TcpServer(unsigned short, unsigned int) (TcpServer.cpp:9)
+==5820==    by 0x8076149: main (Main.cpp:105)
+==5820== 
+==5820== 104 bytes in 1 blocks are still reachable in loss record 15 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40A5594: boost::asio::io_service::service* boost::asio::detail::service_registry::create<boost::asio::detail::epoll_reactor>(boost::asio::io_service&) (service_registry.hpp:81)
+==5820==    by 0x40A2855: boost::asio::detail::service_registry::do_use_service(boost::asio::io_service::service::key const&, boost::asio::io_service::service* (*)(boost::asio::io_service&)) (service_registry.ipp:123)
+==5820==    by 0x40A2A39: boost::asio::detail::epoll_reactor& boost::asio::detail::service_registry::use_service<boost::asio::detail::epoll_reactor>() (service_registry.hpp:48)
+==5820==    by 0x40A2A5E: boost::asio::detail::epoll_reactor& boost::asio::use_service<boost::asio::detail::epoll_reactor>(boost::asio::io_service&) (io_service.hpp:33)
+==5820==    by 0x40A4764: boost::asio::detail::reactive_socket_service_base::reactive_socket_service_base(boost::asio::io_service&) (reactive_socket_service_base.ipp:32)
+==5820==    by 0x40A47A3: boost::asio::detail::reactive_socket_service<boost::asio::ip::tcp>::reactive_socket_service(boost::asio::io_service&) (reactive_socket_service.hpp:77)
+==5820==    by 0x40A47F1: boost::asio::stream_socket_service<boost::asio::ip::tcp>::stream_socket_service(boost::asio::io_service&) (stream_socket_service.hpp:89)
+==5820==    by 0x40A484D: boost::asio::io_service::service* boost::asio::detail::service_registry::create<boost::asio::stream_socket_service<boost::asio::ip::tcp> >(boost::asio::io_service&) (service_registry.hpp:81)
+==5820==    by 0x40A2855: boost::asio::detail::service_registry::do_use_service(boost::asio::io_service::service::key const&, boost::asio::io_service::service* (*)(boost::asio::io_service&)) (service_registry.ipp:123)
+==5820==    by 0x40A2969: boost::asio::stream_socket_service<boost::asio::ip::tcp>& boost::asio::detail::service_registry::use_service<boost::asio::stream_socket_service<boost::asio::ip::tcp> >() (service_registry.hpp:48)
+==5820==    by 0x40A298E: boost::asio::stream_socket_service<boost::asio::ip::tcp>& boost::asio::use_service<boost::asio::stream_socket_service<boost::asio::ip::tcp> >(boost::asio::io_service&) (io_service.hpp:33)
+==5820==    by 0x40A29B2: boost::asio::basic_io_object<boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_io_object(boost::asio::io_service&) (basic_io_object.hpp:90)
+==5820==    by 0x40A78D5: boost::asio::basic_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_socket(boost::asio::io_service&) (basic_socket.hpp:69)
+==5820==    by 0x40A790B: boost::asio::basic_stream_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_stream_socket(boost::asio::io_service&) (basic_stream_socket.hpp:72)
+==5820==    by 0x40A8391: Connection::Connection(boost::asio::io_service&) (Connection.h:20)
+==5820==    by 0x409A449: TcpServer::startAccept() (TcpServer.cpp:59)
+==5820==    by 0x409AD39: TcpServer::TcpServer(unsigned short, unsigned int) (TcpServer.cpp:33)
+==5820==    by 0x8076149: main (Main.cpp:105)
+==5820== 
+==5820== 104 bytes in 1 blocks are still reachable in loss record 16 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40A5594: boost::asio::io_service::service* boost::asio::detail::service_registry::create<boost::asio::detail::epoll_reactor>(boost::asio::io_service&) (service_registry.hpp:81)
+==5820==    by 0x40A2855: boost::asio::detail::service_registry::do_use_service(boost::asio::io_service::service::key const&, boost::asio::io_service::service* (*)(boost::asio::io_service&)) (service_registry.ipp:123)
+==5820==    by 0x40A2A39: boost::asio::detail::epoll_reactor& boost::asio::detail::service_registry::use_service<boost::asio::detail::epoll_reactor>() (service_registry.hpp:48)
+==5820==    by 0x40A2A5E: boost::asio::detail::epoll_reactor& boost::asio::use_service<boost::asio::detail::epoll_reactor>(boost::asio::io_service&) (io_service.hpp:33)
+==5820==    by 0x40A4764: boost::asio::detail::reactive_socket_service_base::reactive_socket_service_base(boost::asio::io_service&) (reactive_socket_service_base.ipp:32)
+==5820==    by 0x40A47A3: boost::asio::detail::reactive_socket_service<boost::asio::ip::tcp>::reactive_socket_service(boost::asio::io_service&) (reactive_socket_service.hpp:77)
+==5820==    by 0x40A47F1: boost::asio::stream_socket_service<boost::asio::ip::tcp>::stream_socket_service(boost::asio::io_service&) (stream_socket_service.hpp:89)
+==5820==    by 0x40A484D: boost::asio::io_service::service* boost::asio::detail::service_registry::create<boost::asio::stream_socket_service<boost::asio::ip::tcp> >(boost::asio::io_service&) (service_registry.hpp:81)
+==5820==    by 0x40A2855: boost::asio::detail::service_registry::do_use_service(boost::asio::io_service::service::key const&, boost::asio::io_service::service* (*)(boost::asio::io_service&)) (service_registry.ipp:123)
+==5820==    by 0x40A2969: boost::asio::stream_socket_service<boost::asio::ip::tcp>& boost::asio::detail::service_registry::use_service<boost::asio::stream_socket_service<boost::asio::ip::tcp> >() (service_registry.hpp:48)
+==5820==    by 0x40A298E: boost::asio::stream_socket_service<boost::asio::ip::tcp>& boost::asio::use_service<boost::asio::stream_socket_service<boost::asio::ip::tcp> >(boost::asio::io_service&) (io_service.hpp:33)
+==5820==    by 0x40A29B2: boost::asio::basic_io_object<boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_io_object(boost::asio::io_service&) (basic_io_object.hpp:90)
+==5820==    by 0x40A78D5: boost::asio::basic_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_socket(boost::asio::io_service&) (basic_socket.hpp:69)
+==5820==    by 0x40A790B: boost::asio::basic_stream_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >::basic_stream_socket(boost::asio::io_service&) (basic_stream_socket.hpp:72)
+==5820==    by 0x40A8391: Connection::Connection(boost::asio::io_service&) (Connection.h:20)
+==5820==    by 0x409A449: TcpServer::startAccept() (TcpServer.cpp:59)
+==5820==    by 0x409A5C3: TcpServer::handleAccept(boost::system::error_code const&) (TcpServer.cpp:71)
+==5820==    by 0x409DC02: boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>::operator()(TcpServer*, boost::system::error_code const&) const (mem_fn_template.hpp:165)
+==5820==    by 0x409DC93: void boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()>::operator()<boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list1<boost::system::error_code const&> >(boost::_bi::type<void>, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>&, boost::_bi::list1<boost::system::error_code const&>&, int) (bind.hpp:313)
+==5820==    by 0x409DCEB: void boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >::operator()<boost::system::error_code>(boost::system::error_code const&) (bind_template.hpp:47)
+==5820==    by 0x409DD18: boost::asio::detail::binder1<boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >, boost::system::error_code>::operator()() (bind_handler.hpp:46)
+==5820==    by 0x409DD3C: void boost::asio::asio_handler_invoke<boost::asio::detail::binder1<boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >, boost::system::error_code> >(boost::asio::detail::binder1<boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >, boost::system::error_code>, ...) (handler_invoke_hook.hpp:64)
+==5820==    by 0x409DD8D: void boost_asio_handler_invoke_helpers::invoke<boost::asio::detail::binder1<boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >, boost::system::error_code>, boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> > >(boost::asio::detail::binder1<boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >, boost::system::error_code>&, boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> >&) (handler_invoke_helpers.hpp:39)
+==5820==    by 0x409F41D: boost::asio::detail::reactive_socket_accept_op<boost::asio::basic_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >, boost::asio::ip::tcp, boost::_bi::bind_t<void, boost::_mfi::mf1<void, TcpServer, boost::system::error_code const&>, boost::_bi::list2<boost::_bi::value<TcpServer*>, boost::arg<1> (*)()> > >::do_complete(boost::asio::detail::task_io_service*, boost::asio::detail::task_io_service_operation*, boost::system::error_code const&, unsigned int) (reactive_socket_accept_op.hpp:123)
+==5820==    by 0x409B678: boost::asio::detail::task_io_service_operation::complete(boost::asio::detail::task_io_service&, boost::system::error_code const&, unsigned int) (task_io_service_operation.hpp:37)
+==5820==    by 0x40A6A4F: boost::asio::detail::epoll_reactor::descriptor_state::do_complete(boost::asio::detail::task_io_service*, boost::asio::detail::task_io_service_operation*, boost::system::error_code const&, unsigned int) (epoll_reactor.ipp:655)
+==5820==    by 0x409B678: boost::asio::detail::task_io_service_operation::complete(boost::asio::detail::task_io_service&, boost::system::error_code const&, unsigned int) (task_io_service_operation.hpp:37)
+==5820==    by 0x40B17C4: boost::asio::detail::task_io_service::do_run_one(boost::asio::detail::scoped_lock<boost::asio::detail::posix_mutex>&, boost::asio::detail::task_io_service::thread_info&, boost::asio::detail::op_queue<boost::asio::detail::task_io_service_operation>&, boost::system::error_code const&) (task_io_service.ipp:366)
+==5820==    by 0x40B1973: boost::asio::detail::task_io_service::run(boost::system::error_code&) (task_io_service.ipp:146)
+==5820==    by 0x40B1A69: boost::asio::io_service::run() (io_service.ipp:59)
+==5820==    by 0x40BB9A7: unsigned int boost::_mfi::mf0<unsigned int, boost::asio::io_service>::call<boost::shared_ptr<boost::asio::io_service> >(boost::shared_ptr<boost::asio::io_service>&, void const*) const (mem_fn_template.hpp:40)
+==5820==    by 0x40BB9DF: unsigned int boost::_mfi::mf0<unsigned int, boost::asio::io_service>::operator()<boost::shared_ptr<boost::asio::io_service> >(boost::shared_ptr<boost::asio::io_service>&) const (mem_fn_template.hpp:55)
+==5820==    by 0x40BBA2B: unsigned int boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > >::operator()<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list0>(boost::_bi::type<unsigned int>, boost::_mfi::mf0<unsigned int, boost::asio::io_service>&, boost::_bi::list0&, long) (bind.hpp:243)
+==5820==    by 0x40BBA7C: boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x40BBAA5: boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 144 bytes in 1 blocks are possibly lost in loss record 17 of 23
+==5820==    at 0x4004EC2: calloc (vg_replace_malloc.c:418)
+==5820==    by 0xA6DF39: _dl_allocate_tls (in /lib/ld-2.5.so)
+==5820==    by 0xBE3F5C: pthread_create@@GLIBC_2.1 (in /lib/libpthread-2.5.so)
+==5820==    by 0x40240AD: boost::thread::start_thread() (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0x8087FC0: boost::thread::thread<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >(boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >, boost::disable_if<boost::is_convertible<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >&, boost::detail::thread_move_t<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > > >, boost::thread::dummy*>::type) (thread.hpp:204)
+==5820==    by 0x80761ED: main (Main.cpp:107)
+==5820== 
+==5820== 168 bytes in 2 blocks are still reachable in loss record 18 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40A595C: boost::asio::detail::epoll_reactor::descriptor_state* boost::asio::detail::object_pool_access::create<boost::asio::detail::epoll_reactor::descriptor_state>() (object_pool.hpp:35)
+==5820==    by 0x40A59D9: boost::asio::detail::object_pool<boost::asio::detail::epoll_reactor::descriptor_state>::alloc() (object_pool.hpp:89)
+==5820==    by 0x40A5A65: boost::asio::detail::epoll_reactor::allocate_descriptor_state() (epoll_reactor.ipp:517)
+==5820==    by 0x40A5AC0: boost::asio::detail::epoll_reactor::register_descriptor(int, boost::asio::detail::epoll_reactor::descriptor_state*&) (epoll_reactor.ipp:151)
+==5820==    by 0x40A5C23: boost::asio::detail::reactive_socket_service_base::do_assign(boost::asio::detail::reactive_socket_service_base::base_implementation_type&, int, int const&, boost::system::error_code&) (reactive_socket_service_base.ipp:182)
+==5820==    by 0x40A5D31: boost::asio::detail::reactive_socket_service<boost::asio::ip::tcp>::assign(boost::asio::detail::reactive_socket_service<boost::asio::ip::tcp>::implementation_type&, boost::asio::ip::tcp const&, int const&, boost::system::error_code&) (reactive_socket_service.hpp:117)
+==5820==    by 0x40A5DBE: boost::asio::stream_socket_service<boost::asio::ip::tcp>::assign(boost::asio::detail::reactive_socket_service<boost::asio::ip::tcp>::implementation_type&, boost::asio::ip::tcp const&, int const&, boost::system::error_code&) (stream_socket_service.hpp:138)
+==5820==    by 0x40A5E30: boost::asio::basic_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >::assign(boost::asio::ip::tcp const&, int const&, boost::system::error_code&) (basic_socket.hpp:285)
+==5820==    by 0x40A8A87: boost::asio::detail::reactive_socket_accept_op_base<boost::asio::basic_socket<boost::asio::ip::tcp, boost::asio::stream_socket_service<boost::asio::ip::tcp> >, boost::asio::ip::tcp>::do_perform(boost::asio::detail::reactor_op*) (reactive_socket_accept_op.hpp:66)
+==5820==    by 0x409B743: boost::asio::detail::reactor_op::perform() (reactor_op.hpp:40)
+==5820==    by 0x40A693C: boost::asio::detail::epoll_reactor::descriptor_state::perform_io(unsigned int) (epoll_reactor.ipp:627)
+==5820==    by 0x40A6A25: boost::asio::detail::epoll_reactor::descriptor_state::do_complete(boost::asio::detail::task_io_service*, boost::asio::detail::task_io_service_operation*, boost::system::error_code const&, unsigned int) (epoll_reactor.ipp:653)
+==5820==    by 0x409B678: boost::asio::detail::task_io_service_operation::complete(boost::asio::detail::task_io_service&, boost::system::error_code const&, unsigned int) (task_io_service_operation.hpp:37)
+==5820==    by 0x40B17C4: boost::asio::detail::task_io_service::do_run_one(boost::asio::detail::scoped_lock<boost::asio::detail::posix_mutex>&, boost::asio::detail::task_io_service::thread_info&, boost::asio::detail::op_queue<boost::asio::detail::task_io_service_operation>&, boost::system::error_code const&) (task_io_service.ipp:366)
+==5820==    by 0x40B1973: boost::asio::detail::task_io_service::run(boost::system::error_code&) (task_io_service.ipp:146)
+==5820==    by 0x40B1A69: boost::asio::io_service::run() (io_service.ipp:59)
+==5820==    by 0x40BB9A7: unsigned int boost::_mfi::mf0<unsigned int, boost::asio::io_service>::call<boost::shared_ptr<boost::asio::io_service> >(boost::shared_ptr<boost::asio::io_service>&, void const*) const (mem_fn_template.hpp:40)
+==5820==    by 0x40BB9DF: unsigned int boost::_mfi::mf0<unsigned int, boost::asio::io_service>::operator()<boost::shared_ptr<boost::asio::io_service> >(boost::shared_ptr<boost::asio::io_service>&) const (mem_fn_template.hpp:55)
+==5820==    by 0x40BBA2B: unsigned int boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > >::operator()<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list0>(boost::_bi::type<unsigned int>, boost::_mfi::mf0<unsigned int, boost::asio::io_service>&, boost::_bi::list0&, long) (bind.hpp:243)
+==5820==    by 0x40BBA7C: boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x40BBAA5: boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 176 bytes in 2 blocks are still reachable in loss record 19 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40AE334: boost::asio::detail::service_registry::service_registry<boost::asio::detail::task_io_service, unsigned int>(boost::asio::io_service&, boost::asio::detail::task_io_service*, unsigned int) (service_registry.hpp:28)
+==5820==    by 0x40AE445: boost::asio::io_service::io_service() (io_service.ipp:40)
+==5820==    by 0x40B9DBA: ServicePool::ServicePool(unsigned int) (ServicePool.cpp:11)
+==5820==    by 0x409AB98: TcpServer::TcpServer(unsigned short, unsigned int) (TcpServer.cpp:9)
+==5820==    by 0x8076149: main (Main.cpp:105)
+==5820== 
+==5820== 272 bytes in 1 blocks are still reachable in loss record 20 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x8087EF2: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >* boost::detail::heap_new_impl<boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >, boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >&>(boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >&) (thread_heap_alloc.hpp:47)
+==5820==    by 0x8087F58: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >* boost::detail::heap_new<boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >, boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >(boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >&) (thread_heap_alloc.hpp:73)
+==5820==    by 0x8087F73: boost::shared_ptr<boost::detail::thread_data_base> boost::thread::make_thread_info<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >(boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >) (thread.hpp:140)
+==5820==    by 0x8087FB2: boost::thread::thread<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >(boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >, boost::disable_if<boost::is_convertible<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >&, boost::detail::thread_move_t<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > > >, boost::thread::dummy*>::type) (thread.hpp:202)
+==5820==    by 0x80761ED: main (Main.cpp:107)
+==5820== 
+==5820== 288 bytes in 2 blocks are possibly lost in loss record 21 of 23
+==5820==    at 0x4004EC2: calloc (vg_replace_malloc.c:418)
+==5820==    by 0xA6DF39: _dl_allocate_tls (in /lib/ld-2.5.so)
+==5820==    by 0xBE3F5C: pthread_create@@GLIBC_2.1 (in /lib/libpthread-2.5.so)
+==5820==    by 0x40240AD: boost::thread::start_thread() (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0x40BC929: boost::thread::thread<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >(boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >, boost::disable_if<boost::is_convertible<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >&, boost::detail::thread_move_t<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > > >, boost::thread::dummy*>::type) (thread.hpp:204)
+==5820==    by 0x40BA189: ServicePool::run() (ServicePool.cpp:24)
+==5820==    by 0x409A6AB: TcpServer::run() (TcpServer.cpp:46)
+==5820==    by 0x807CEB5: boost::_mfi::mf0<void, TcpServer>::operator()(TcpServer*) const (mem_fn_template.hpp:49)
+==5820==    by 0x807CF0D: void boost::_bi::list1<boost::_bi::value<TcpServer*> >::operator()<boost::_mfi::mf0<void, TcpServer>, boost::_bi::list0>(boost::_bi::type<void>, boost::_mfi::mf0<void, TcpServer>&, boost::_bi::list0&, int) (bind.hpp:253)
+==5820==    by 0x807CF50: boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x807CF69: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 525 bytes in 1 blocks are possibly lost in loss record 22 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x417313A: std::string::_Rep::_S_create(unsigned int, unsigned int, std::allocator<char> const&) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x4173CD7: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned int) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x4174887: std::string::reserve(unsigned int) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x416D542: std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x4172310: std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, int) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x415FFCC: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x4160221: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, void const*) const (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x416811C: std::ostream::operator<<(void const*) (in /usr/lib/libstdc++.so.6.0.8)
+==5820==    by 0x40BDC7F: std::basic_ostream<char, std::char_traits<char> >& boost::operator<< <char, std::char_traits<char>, boost::detail::thread_data_base>(std::basic_ostream<char, std::char_traits<char> >&, boost::shared_ptr<boost::detail::thread_data_base> const&) (shared_ptr.hpp:586)
+==5820==    by 0x40BDCC2: std::basic_ostream<char, std::char_traits<char> >& boost::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, boost::thread::id const&) (thread.hpp:442)
+==5820==    by 0x40BA2DC: ServicePool::run() (ServicePool.cpp:31)
+==5820==    by 0x409A6AB: TcpServer::run() (TcpServer.cpp:46)
+==5820==    by 0x807CEB5: boost::_mfi::mf0<void, TcpServer>::operator()(TcpServer*) const (mem_fn_template.hpp:49)
+==5820==    by 0x807CF0D: void boost::_bi::list1<boost::_bi::value<TcpServer*> >::operator()<boost::_mfi::mf0<void, TcpServer>, boost::_bi::list0>(boost::_bi::type<void>, boost::_mfi::mf0<void, TcpServer>&, boost::_bi::list0&, int) (bind.hpp:253)
+==5820==    by 0x807CF50: boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x807CF69: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== 552 bytes in 2 blocks are still reachable in loss record 23 of 23
+==5820==    at 0x4006355: operator new(unsigned int) (vg_replace_malloc.c:214)
+==5820==    by 0x40BC706: boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >* boost::detail::heap_new_impl<boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >, boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >&>(boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >&) (thread_heap_alloc.hpp:47)
+==5820==    by 0x40BC78A: boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >* boost::detail::heap_new<boost::detail::thread_data<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >, boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >(boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >&) (thread_heap_alloc.hpp:73)
+==5820==    by 0x40BC8C1: boost::shared_ptr<boost::detail::thread_data_base> boost::thread::make_thread_info<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >(boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >) (thread.hpp:140)
+==5820==    by 0x40BC910: boost::thread::thread<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > >(boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >, boost::disable_if<boost::is_convertible<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > >&, boost::detail::thread_move_t<boost::_bi::bind_t<unsigned int, boost::_mfi::mf0<unsigned int, boost::asio::io_service>, boost::_bi::list1<boost::_bi::value<boost::shared_ptr<boost::asio::io_service> > > > > >, boost::thread::dummy*>::type) (thread.hpp:202)
+==5820==    by 0x40BA189: ServicePool::run() (ServicePool.cpp:24)
+==5820==    by 0x409A6AB: TcpServer::run() (TcpServer.cpp:46)
+==5820==    by 0x807CEB5: boost::_mfi::mf0<void, TcpServer>::operator()(TcpServer*) const (mem_fn_template.hpp:49)
+==5820==    by 0x807CF0D: void boost::_bi::list1<boost::_bi::value<TcpServer*> >::operator()<boost::_mfi::mf0<void, TcpServer>, boost::_bi::list0>(boost::_bi::type<void>, boost::_mfi::mf0<void, TcpServer>&, boost::_bi::list0&, int) (bind.hpp:253)
+==5820==    by 0x807CF50: boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > >::operator()() (bind_template.hpp:20)
+==5820==    by 0x807CF69: boost::detail::thread_data<boost::_bi::bind_t<void, boost::_mfi::mf0<void, TcpServer>, boost::_bi::list1<boost::_bi::value<TcpServer*> > > >::run() (thread.hpp:61)
+==5820==    by 0x402560F: thread_proxy (in /usr/local/lib/libboost_thread.so.1.48.0)
+==5820==    by 0xBE3831: start_thread (in /lib/libpthread-2.5.so)
+==5820==    by 0xB4E46D: clone (in /lib/libc-2.5.so)
+==5820== 
+==5820== LEAK SUMMARY:
+==5820==    definitely lost: 0 bytes in 0 blocks
+==5820==    indirectly lost: 0 bytes in 0 blocks
+==5820==      possibly lost: 1,036 bytes in 6 blocks
+==5820==    still reachable: 1,712 bytes in 29 blocks
+==5820==         suppressed: 0 bytes in 0 blocks
+==5820== 
+==5820== For counts of detected and suppressed errors, rerun with: -v
+==5820== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 28 from 8)
