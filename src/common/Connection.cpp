@@ -81,6 +81,7 @@ void Connection::send(const Packet& packet) {
     b.append<Packet::Header>(header);
     b.append((const ByteBuffer&)packet);
    
+    boost::lock_guard<boost::recursive_mutex> g(sendLock);
     sendQueue.push_back(b);
 
     if (! sendQueue.empty()) {
@@ -89,12 +90,14 @@ void Connection::send(const Packet& packet) {
 }
 
 void Connection::startSend() {
+    boost::lock_guard<boost::recursive_mutex> g(sendLock);
     const ByteBuffer& b = sendQueue.front();
     async_write(socket, buffer(b.contents(), b.size()), boost::bind(&Connection::handleSend, this, placeholders::error, placeholders::bytes_transferred));
 }
 
 void Connection::handleSend(const boost::system::error_code& error, size_t bytesTransferred) {
     if (! error) {
+        boost::lock_guard<boost::recursive_mutex> g(sendLock);
         sendQueue.pop_front();
         if (! sendQueue.empty()) {
             startSend();

@@ -56,6 +56,7 @@ private:
 
     // FIXME 这里是否需要加锁 发送消息队列
     std::deque<ByteBuffer> sendQueue;
+    boost::recursive_mutex sendLock;
     // 接收的消息包队列
     LockedQueue<Packet*> packets;
 };

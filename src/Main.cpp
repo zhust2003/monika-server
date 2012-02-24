@@ -10,20 +10,10 @@
 
 #include <boost/thread/thread.hpp> 
 
-//#include <boost/python.hpp>
-//using namespace boost::python;
-
 static TcpServer* server;
 static bool run = true;
 static const uint32 LOOP_DELAY = 100;
 
-//void echoC() {
-//    sLogger.trace("invoke from c++");
-//}
-//
-//BOOST_PYTHON_MODULE(monika) {
-//    def("echoC", &echoC);
-//}
 
 // 基本的逻辑循环
 void loop() {
@@ -74,27 +64,6 @@ int main(int argc, char* argv[]) {
 
     uint16 port = sConfig.get("net.port", 6061);
     size_t threadSize = sConfig.get("net.threadSize", 1);
-
-
-    //Py_Initialize();
-
-    //try {
-    //    initmonika();
-    //    object main = import("__main__");
-    //    object global(main.attr("__dict__"));
-
-    //    object result = exec_file("services/AccountService.py", global, global);
-    //    object a = global["a"];
-    //    a.attr("echo")();
-    //} catch (error_already_set) {
-    //    PyErr_Print();
-    //}
-
-    //Py_Finalize();
-
-    //lua_State* l = luaL_newstate();
-    //lua_close(l);
-    //return 0;
 
 
     //sLogger.setLogLevel(LOG_LVL_WARNING);

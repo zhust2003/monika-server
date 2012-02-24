@@ -11,7 +11,7 @@
 #include <boost/asio/deadline_timer.hpp>
 #include <boost/thread/thread.hpp> 
 
-#define CLIENT_COUNT 10
+#define CLIENT_COUNT 50
 
 #define Client TcpClient<StatConnection>
 
@@ -58,12 +58,14 @@ void loop() {
                     p << (uint8)1;
                 }
                 c->getConn()->send(p);
+                //c->getConn()->send(p);
                 Session* s = new Session(c->getConn());
                 sessionMgr.addSession(s);
                 
                 c->setConn(NULL);
                 safeDelete(c);
                 i = clients.erase(i);
+                //++i;
             } else {
                 ++i;
             }
@@ -91,9 +93,9 @@ int main() {
     }
 
     // 超时定时器
-    boost::asio::deadline_timer stopTimer(pool.getAcceptService());
-    stopTimer.expires_from_now(boost::posix_time::seconds(10));
-    stopTimer.async_wait(handleTimeout);
+    //boost::asio::deadline_timer stopTimer(pool.getAcceptService());
+    //stopTimer.expires_from_now(boost::posix_time::seconds(100));
+    //stopTimer.async_wait(handleTimeout);
     
     // 信号处理
     setupSignals();
