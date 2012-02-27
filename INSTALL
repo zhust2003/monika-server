@@ -1,5 +1,6 @@
 # install
 mkdir build
 cd build
+# cmake -DCMAKE_BUILD_TYPE=Debug/Release path
 cmake ../
 make

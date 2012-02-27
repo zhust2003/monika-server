@@ -18,7 +18,8 @@ public:
     explicit Connection(io_service& ioService) : socket(ioService),
                                                  headerBuffer(sizeof(Packet::Header)),
                                                  packet(),
-                                                 closing(false)
+                                                 closing(false),
+                                                 sending(false)
     {
 
     }
@@ -54,9 +55,12 @@ private:
     std::string ip;
     bool closing;
 
-    // FIXME 这里是否需要加锁 发送消息队列
+    // 发送消息队列
     std::deque<ByteBuffer> sendQueue;
     boost::recursive_mutex sendLock;
+    // 异步写入是否完成
+    bool sending;
+
     // 接收的消息包队列
     LockedQueue<Packet*> packets;
 };
