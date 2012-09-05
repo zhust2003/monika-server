@@ -11,6 +11,12 @@ ADD_LIBRARY("${TARGET_NAME}" SHARED
             SessionMgr.cpp
            )
 
+# 链接库
+TARGET_LINK_LIBRARIES("${TARGET_NAME}" 
+                      boost_system
+                      common
+                      )
+
 # 包含目录
 INCLUDE_DIRECTORIES(
                     "${CMAKE_SOURCE_DIR}/src"

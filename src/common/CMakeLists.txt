@@ -17,6 +17,8 @@ ADD_LIBRARY("${TARGET_NAME}" SHARED
 
 # 链接库
 TARGET_LINK_LIBRARIES("${TARGET_NAME}" 
+                      boost_system
+                      boost_thread
                       boost_date_time
                       )
 # 包含目录
