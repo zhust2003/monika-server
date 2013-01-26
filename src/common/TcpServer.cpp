@@ -5,8 +5,7 @@
 TcpServer::TcpServer(uint16 port, 
                      std::size_t poolSize) : servicePool(poolSize),
                                              signals(servicePool.getAcceptService()),
-                                             acceptor(servicePool.getAcceptService()),
-                                             conn()
+                                             acceptor(servicePool.getAcceptService())
 {
     // 设置信号处理
     //signals.add(SIGINT);
@@ -31,11 +30,11 @@ TcpServer::TcpServer(uint16 port,
 
 TcpServer::~TcpServer() {
     //stop();
-    Connection* conn;
+    //Connection* conn;
     // FIXME 由于这里的next是不阻塞锁，会不会导致直接返回了，没释放资源
-    while (connections.next(conn)) {
-        safeDelete(conn);
-    }
+    //while (connections.next(conn)) {
+    //    safeDelete(conn);
+    //}
 }
 
 void TcpServer::run() {
@@ -52,17 +51,19 @@ void TcpServer::stop() {
 }
 
 void TcpServer::startAccept() {
-    conn.reset(new Connection(servicePool.getIOService()));
-    acceptor.async_accept(conn->getSocket(), boost::bind(&TcpServer::handleAccept, this, placeholders::error));
+    //conn.reset(new Connection(servicePool.getIOService()));
+    Connection::pointer newConn = Connection::create(servicePool.getIOService());
+    acceptor.async_accept(newConn->getSocket(), boost::bind(&TcpServer::handleAccept, this, newConn, placeholders::error));
 }
 
-void TcpServer::handleAccept(const boost::system::error_code& e) {
+void TcpServer::handleAccept(Connection::pointer newConn, const boost::system::error_code& e) {
     if (!e) {
         // 释放所有权，自己处理资源释放
-        conn->start();
-        connections.add(conn.get());
-        sLogger.debug("Net", "%s 连接进入", conn->getIp().c_str());
-        conn.release();
+        //conn->start();
+        newConn->start();
+        connections.add(newConn);
+        sLogger.debug("Net", "%s 连接进入", newConn->getIp().c_str());
+        //conn.release();
     }
     startAccept();
 }

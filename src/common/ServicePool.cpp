@@ -21,6 +21,7 @@ void ServicePool::run() {
     std::vector<boost::shared_ptr<boost::thread> > threads;
 
     // 初始化所有线程
+    sLogger.debug("Net", "网络线程个数 %d", ioServices.size());
     for (std::size_t i = 0; i < ioServices.size(); ++i) {
         boost::shared_ptr<boost::thread> thread(new boost::thread(boost::bind(&io_service::run, ioServices[i])));
         threads.push_back(thread);

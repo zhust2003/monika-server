@@ -9,15 +9,18 @@
 #include "Session.h"
 #include "common/Packet.h"
 
-Session::~Session() {
-    safeDelete(conn);
-}
-
 bool Session::update() {
     // 如果已经掉线
     if (conn->isClose()) {
         return false;
     }
+
+    Packet sendp(0);
+    for (uint32 j = 0; j < 100; ++j) {
+        sendp << (uint8)1;
+    }
+    // 派发消息给处理器
+    conn->send(sendp);
 
     Packet* p = conn->popPacket();
     while (p) {

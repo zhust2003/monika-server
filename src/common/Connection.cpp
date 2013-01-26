@@ -3,15 +3,13 @@
 #include "boost/bind.hpp"
 
 Connection::~Connection() {
-    //safeDelete(packet); 
-
     // FIXME 由于这里的next是不阻塞锁，会不会导致直接返回了，没释放资源
     Packet* p;
     while (packets.next(p)) {
         safeDelete(p);
     }
 
-    sLogger.debug("Conn", "连接被回收");
+    sLogger.debug("Conn", "%x 连接被回收", this);
 }
 
 void Connection::start() {
@@ -27,16 +25,19 @@ void Connection::start() {
     // 关闭延迟算法
     socket.set_option(tcp::no_delay(true));
 
+    // 开始接收
     startRecv();
 }
 
 void Connection::startRecv() {
+    //if (closing) return;
     headerBuffer.resize(sizeof(Packet::Header));
-    async_read(socket, buffer((char*)headerBuffer.contents(), sizeof(Packet::Header)), boost::bind(&Connection::handleRecvHeader, this, placeholders::error, boost::asio::placeholders::bytes_transferred));
+    async_read(socket, buffer((char*)headerBuffer.contents(), sizeof(Packet::Header)), boost::bind(&Connection::handleRecvHeader, shared_from_this(), placeholders::error, boost::asio::placeholders::bytes_transferred));
 
 }
 
 void Connection::handleRecvHeader(const boost::system::error_code& error, size_t bytesTransferred) {
+    //if (closing) return;
     //sLogger->debug("Net", "%s %d %s %d", ip.c_str(), error.value(), error.message().c_str(), bytesTransferred);
     if (! error) {
         uint16 size, cmd;
@@ -48,40 +49,44 @@ void Connection::handleRecvHeader(const boost::system::error_code& error, size_t
 
         // 需要先初始化空间
         packet->resize(size);
-        async_read(socket, buffer((char*)packet->contents(), size), boost::bind(&Connection::handleRecvBody, this, placeholders::error, placeholders::bytes_transferred));
+        async_read(socket, buffer((char*)packet->contents(), size), boost::bind(&Connection::handleRecvBody, shared_from_this(), placeholders::error, placeholders::bytes_transferred));
     } else if (error > 0 && bytesTransferred == 0) {
-        sLogger.debug("Net", "%s 连接离开", ip.c_str());
-        close();
+        sLogger.debug("Net", "%x %s 连接离开", this, ip.c_str());
+        doClose();
     } else if (error < 0) {
         sLogger.debug("Net", "%s 连接离开 %s", ip.c_str(), error.message().c_str());
-        close();
+        doClose();
     }
 }
 
 void Connection::handleRecvBody(const boost::system::error_code& error, size_t bytesTransferred) {
+    //if (closing) return;
     if (! error) {
-        sLogger.trace("接收到完整的包");
-        packet->hexdump();
-        packets.add(packet.get());
-        startRecv();
+        //sLogger.trace("接收到完整的包");
+        //packet->hexdump();
         // 不自动释放资源
-        packet.release();
+        packets.add(packet.release());
+        startRecv();
     } else if (error > 0 && bytesTransferred == 0) {
         sLogger.debug("Net", "%s 连接离开", ip.c_str());
-        close();
+        doClose();
     } else if (error < 0) {
         sLogger.debug("Net", "%s 连接离开 %s", ip.c_str(), error.message().c_str());
-        close();
+        doClose();
     }
 }
 
-void Connection::send(const Packet& packet) {
+void Connection::doSend(const Packet& packet) {
     ByteBuffer b(packet.size() + sizeof(Packet::Header));
     Packet::Header header = { htons(packet.size()), htons(packet.getOpcode()) };
     b.append<Packet::Header>(header);
     b.append((const ByteBuffer&)packet);
+
    
-    boost::lock_guard<boost::recursive_mutex> g(sendLock);
+    //boost::lock_guard<boost::recursive_mutex> g(sendLock);
+
+    //if (closing) return;
+
     sendQueue.push_back(b);
 
     if (! sendQueue.empty() && ! sending) {
@@ -90,15 +95,18 @@ void Connection::send(const Packet& packet) {
 }
 
 void Connection::startSend() {
-    boost::lock_guard<boost::recursive_mutex> g(sendLock);
+//    boost::lock_guard<boost::recursive_mutex> g(sendLock);
+//    if (closing) return;
+    //std::cout << "发包" << std::endl;
     const ByteBuffer& b = sendQueue.front();
-    async_write(socket, buffer(b.contents(), b.size()), boost::bind(&Connection::handleSend, this, placeholders::error, placeholders::bytes_transferred));
+    async_write(socket, buffer(b.contents(), b.size()), boost::bind(&Connection::handleSend, shared_from_this(), placeholders::error, placeholders::bytes_transferred));
     sending = true;
 }
 
 void Connection::handleSend(const boost::system::error_code& error, size_t bytesTransferred) {
     if (! error) {
-        boost::lock_guard<boost::recursive_mutex> g(sendLock);
+        //boost::lock_guard<boost::recursive_mutex> g(sendLock);
+        //if (closing) return;
         sendQueue.pop_front();
         if (! sendQueue.empty()) {
             startSend();
@@ -107,10 +115,12 @@ void Connection::handleSend(const boost::system::error_code& error, size_t bytes
     sending = false;
 }
 
-void Connection::close() {
-    // 优雅关闭
-    boost::system::error_code ignored_ec;
-    socket.shutdown(tcp::socket::shutdown_both, ignored_ec);
-
+void Connection::doClose() {
+    if (closing) return;
     closing = true;
+    sLogger.debug("Net", "%x 连接关闭", this);
+    boost::system::error_code ignored_ec;
+    socket.cancel(ignored_ec);
+    socket.shutdown(tcp::socket::shutdown_both, ignored_ec);
+    socket.close(ignored_ec);
 }

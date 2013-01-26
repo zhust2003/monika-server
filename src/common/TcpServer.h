@@ -13,12 +13,12 @@ public:
     TcpServer(uint16 port, std::size_t poolSize = 1);
     virtual ~TcpServer();
     void startAccept();
-    void handleAccept(const boost::system::error_code& e);
+    void handleAccept(Connection::pointer newConn, const boost::system::error_code& e);
     void run();
     void stop();
     void handleStop(const boost::system::error_code& e, int s);
-    Connection* popConn() {
-        Connection* p = NULL;
+    Connection::pointer popConn() {
+        Connection::pointer p;
         connections.next(p);
         return p;
     }
@@ -32,11 +32,11 @@ private:
     tcp::acceptor acceptor;
 
     // 连接管理队列
-    LockedQueue<Connection*> connections;
+    LockedQueue<Connection::pointer> connections;
 
     // 新连接
-    typedef std::auto_ptr<Connection> ConnectionPtr;
-    ConnectionPtr conn;
+    //typedef std::auto_ptr<Connection> ConnectionPtr;
+    //ConnectionPtr conn;
 };
 
 

@@ -15,6 +15,12 @@ public:
 
 
     }
+    typedef boost::shared_ptr<StatConnection> pointer;
+    
+    static pointer create(boost::asio::io_service& io_service) {
+        return pointer(new StatConnection(io_service));
+    }
+
     ~StatConnection();
     void handleRecvHeader(const boost::system::error_code& error, size_t bytesTransferred);
     void handleRecvBody(const boost::system::error_code& error, size_t bytesTransferred);

@@ -11,13 +11,13 @@
 #include <boost/asio/deadline_timer.hpp>
 #include <boost/thread/thread.hpp> 
 
-#define CLIENT_COUNT 1
+#define CLIENT_COUNT 100
 
 #define Client TcpClient<StatConnection>
 
 static bool run = true;
 static const uint32 LOOP_DELAY = 100;
-static const uint32 BLOCK_SIZE = 1;
+static const uint32 BLOCK_SIZE = 10000;
 static std::deque<Client*> clients;
 static ServicePool pool(1);
 
@@ -41,7 +41,7 @@ void setupSignals() {
 }
 
 void loop() {
-    SessionMgr sessionMgr;
+    //SessionMgr sessionMgr;
 
     while(run == true) {
         // 获取开始时间
@@ -58,13 +58,14 @@ void loop() {
                     p << (uint8)1;
                 }
                 c->getConn()->send(p);
-                Session* s = new Session(c->getConn());
-                sessionMgr.addSession(s);
+                //Session* s = new Session(c->getConn());
+                //sessionMgr.addSession(s);
                 
-                c->setConn(NULL);
-                safeDelete(c);
-                i = clients.erase(i);
-                //++i;
+                //c->setConn(NULL);
+                //safeDelete(c);
+                //i = clients.erase(i);
+                //run = false;                
+                ++i;
             } else {
                 ++i;
             }

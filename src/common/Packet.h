@@ -20,13 +20,13 @@ class Packet : public ByteBuffer
         }
 
         void setOpcode(uint16 opcode) {
-            opcode = opcode;
+            this->opcode = opcode;
         }
 
         void reset(uint16 opcode, size_t res = 200) {
             clear();
             _storage.reserve(res);
-            opcode = opcode;
+            this->opcode = opcode;
         }
 
     private:

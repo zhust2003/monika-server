@@ -22,8 +22,7 @@ template<class T>
 class TcpClient {
 public:
     TcpClient(const std::string& address, const std::string& port, io_service& service) : ioService(service),
-                                                                                                     conn(NULL),
-                                                                                                     connected(false)
+                                                                                          connected(false)
     {
         tcp::resolver resolver(ioService);
         tcp::resolver::query query(address, port);
@@ -33,11 +32,11 @@ public:
         startConnect(endpoint);
     }
     ~TcpClient() {
-        safeDelete(conn);
+        sLogger.trace("清理客户端");
     }
 
     void startConnect(const tcp::resolver::iterator& endpoint) {
-        conn = new T(ioService);
+        conn = T::create(ioService);
         async_connect(conn->getSocket(), endpoint, boost::bind(&TcpClient::handleConnect, this, placeholders::error)); 
     }
 
@@ -48,17 +47,13 @@ public:
             conn->start();
         } else {
             sLogger.debug("Net", "连接失败");
-            safeDelete(conn);
+            conn.reset();
         }
     }
 
 
     T* getConn() const {
-        return conn;
-    }
-
-    void setConn(T* conn) {
-        this->conn = conn;
+        return conn.get();
     }
 
     bool isConnected() {
@@ -67,7 +62,7 @@ public:
 
 private:
     io_service& ioService;
-    T* conn;
+    typename T::pointer conn;
     bool connected;
 };
 

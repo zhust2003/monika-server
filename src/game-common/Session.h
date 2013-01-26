@@ -11,18 +11,18 @@
 #define SESSION_3Q6CQNT4
 
 #include "common/Connection.h"
+#include <boost/shared_ptr.hpp>
 
 class Session {
 public:
-    Session(Connection* conn) : conn(conn) {
+    Session(Connection::pointer conn) : conn(conn) {
 
     }
-    virtual ~Session();
 
     bool update();
 
-private:
-    Connection* conn;
+    //Connection* conn;
+    Connection::pointer conn;
 };
 
 

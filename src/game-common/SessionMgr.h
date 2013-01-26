@@ -20,7 +20,6 @@ public:
     void addSession(Session* s);
     void update();
 
-private:
     std::deque<Session*> sessions;
 };
 

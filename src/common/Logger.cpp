@@ -96,7 +96,7 @@ void Logger::error(const char* category, const char* format, ...) {
 }
 
 void Logger::setLogFile() {
-    boost::lock_guard<boost::recursive_mutex> g(mutex);
+    //boost::lock_guard<boost::recursive_mutex> g(mutex);
     time_t t = time(NULL);
     tm* tm = localtime(&t);
 
@@ -135,7 +135,7 @@ void Logger::print(const char* format, ...) {
 }
 
 void Logger::printVa(const char* format, va_list ap) {
-    boost::lock_guard<boost::recursive_mutex> g(mutex);
+    //boost::lock_guard<boost::recursive_mutex> g(mutex);
     if (NULL != logFile) {
         va_list ap2;
         va_copy(ap2, ap);
@@ -147,7 +147,7 @@ void Logger::printVa(const char* format, va_list ap) {
 }
 
 void Logger::printMsg(Color color, char pfx, const char* category, const char* format, va_list ap) {
-    boost::lock_guard<boost::recursive_mutex> g(mutex);
+    //boost::lock_guard<boost::recursive_mutex> g(mutex);
     printTime();
     setColor(color);
     print(" %c", pfx);
