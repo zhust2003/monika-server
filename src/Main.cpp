@@ -12,7 +12,7 @@
 
 static TcpServer* server;
 static bool run = true;
-static const uint32 LOOP_DELAY = 10;
+static const uint32 LOOP_DELAY = 100;
 SessionMgr sessionMgr;
 
 void stop() {
@@ -77,6 +77,7 @@ void setupSignals() {
     signal(SIGINT, catchSignal);
     signal(SIGTERM, catchSignal);
     signal(SIGABRT, catchSignal);
+    signal(SIGHUP, catchSignal);
 }
 
 int main(int argc, char* argv[]) {
@@ -105,6 +106,7 @@ int main(int argc, char* argv[]) {
     boost::shared_ptr<boost::thread> LogicThread(new boost::thread(loop));
     // 等待逻辑线程结束
     LogicThread->join();
+    NetThread->join();
     
     delete server;
 

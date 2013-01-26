@@ -11,7 +11,7 @@
 #include <boost/asio/deadline_timer.hpp>
 #include <boost/thread/thread.hpp> 
 
-#define CLIENT_COUNT 100
+#define CLIENT_COUNT 1
 
 #define Client TcpClient<StatConnection>
 
@@ -19,12 +19,12 @@ static bool run = true;
 static const uint32 LOOP_DELAY = 100;
 static const uint32 BLOCK_SIZE = 10000;
 static std::deque<Client*> clients;
-static ServicePool pool(1);
+static ServicePool* pool;
 
 
 void handleTimeout(const boost::system::error_code& error) {
     sLogger.trace("虚拟客户端停止");
-    pool.stop();
+    pool->stop();
     run = false;
 }
 
@@ -86,15 +86,16 @@ void loop() {
 }
 
 int main() {
+    pool = new ServicePool(1);
     // 初始化多个客户端
     for (int i = 0; i < CLIENT_COUNT; ++i) {
-        Client* c = new Client("127.0.0.1", "6061", pool.getIOService());
+        Client* c = new Client("127.0.0.1", "6061", pool->getIOService());
         clients.push_back(c);
     }
 
     // 超时定时器
-    //boost::asio::deadline_timer stopTimer(pool.getAcceptService());
-    //stopTimer.expires_from_now(boost::posix_time::seconds(100));
+    //boost::asio::deadline_timer stopTimer(pool->getAcceptService());
+    //stopTimer.expires_from_now(boost::posix_time::seconds(10));
     //stopTimer.async_wait(handleTimeout);
     
     // 信号处理
@@ -107,10 +108,12 @@ int main() {
     boost::shared_ptr<boost::thread> LogicThread(new boost::thread(loop));
     // 等待逻辑线程结束
     LogicThread->join();
+    NetThread->join();
 
     for (std::deque<Client*>::iterator i = clients.begin(); i != clients.end(); ++i) {
         Client* c = *i;
         safeDelete(c);
     }
     clients.clear();
+    delete pool;
 }

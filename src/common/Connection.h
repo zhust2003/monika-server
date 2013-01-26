@@ -20,8 +20,7 @@ public:
     explicit Connection(io_service& ioService) : socket(ioService),
                                                  headerBuffer(sizeof(Packet::Header)),
                                                  packet(),
-                                                 closing(false),
-                                                 sending(false)
+                                                 closing(false)
     {
 
     }
@@ -75,8 +74,6 @@ private:
 
     // 发送消息队列
     std::deque<ByteBuffer> sendQueue;
-    // 异步写入是否完成
-    bool sending;
 
     // 接收的消息包队列
     LockedQueue<Packet*> packets;

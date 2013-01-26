@@ -27,18 +27,17 @@ void Connection::start() {
 
     // 开始接收
     startRecv();
+
+    sLogger.debug("Conn", "%x 连接建立", this);
 }
 
 void Connection::startRecv() {
-    //if (closing) return;
     headerBuffer.resize(sizeof(Packet::Header));
     async_read(socket, buffer((char*)headerBuffer.contents(), sizeof(Packet::Header)), boost::bind(&Connection::handleRecvHeader, shared_from_this(), placeholders::error, boost::asio::placeholders::bytes_transferred));
 
 }
 
 void Connection::handleRecvHeader(const boost::system::error_code& error, size_t bytesTransferred) {
-    //if (closing) return;
-    //sLogger->debug("Net", "%s %d %s %d", ip.c_str(), error.value(), error.message().c_str(), bytesTransferred);
     if (! error) {
         uint16 size, cmd;
         headerBuffer >> size;
@@ -60,10 +59,7 @@ void Connection::handleRecvHeader(const boost::system::error_code& error, size_t
 }
 
 void Connection::handleRecvBody(const boost::system::error_code& error, size_t bytesTransferred) {
-    //if (closing) return;
     if (! error) {
-        //sLogger.trace("接收到完整的包");
-        //packet->hexdump();
         // 不自动释放资源
         packets.add(packet.release());
         startRecv();
@@ -83,36 +79,27 @@ void Connection::doSend(const Packet& packet) {
     b.append((const ByteBuffer&)packet);
 
    
-    //boost::lock_guard<boost::recursive_mutex> g(sendLock);
-
-    //if (closing) return;
+    bool sending = ! sendQueue.empty();
 
     sendQueue.push_back(b);
 
-    if (! sendQueue.empty() && ! sending) {
+    if (! sending) {
         startSend();
     }
 }
 
 void Connection::startSend() {
-//    boost::lock_guard<boost::recursive_mutex> g(sendLock);
-//    if (closing) return;
-    //std::cout << "发包" << std::endl;
     const ByteBuffer& b = sendQueue.front();
     async_write(socket, buffer(b.contents(), b.size()), boost::bind(&Connection::handleSend, shared_from_this(), placeholders::error, placeholders::bytes_transferred));
-    sending = true;
 }
 
 void Connection::handleSend(const boost::system::error_code& error, size_t bytesTransferred) {
     if (! error) {
-        //boost::lock_guard<boost::recursive_mutex> g(sendLock);
-        //if (closing) return;
         sendQueue.pop_front();
         if (! sendQueue.empty()) {
             startSend();
         }
     }
-    sending = false;
 }
 
 void Connection::doClose() {

@@ -147,7 +147,7 @@ void Logger::printVa(const char* format, va_list ap) {
 }
 
 void Logger::printMsg(Color color, char pfx, const char* category, const char* format, va_list ap) {
-    //boost::lock_guard<boost::recursive_mutex> g(mutex);
+    boost::lock_guard<boost::recursive_mutex> g(mutex);
     printTime();
     setColor(color);
     print(" %c", pfx);
