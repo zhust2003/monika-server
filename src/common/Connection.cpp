@@ -13,7 +13,8 @@ Connection::~Connection() {
 }
 
 void Connection::start() {
-    tcp::endpoint remoteEp = socket.remote_endpoint();
+    boost::system::error_code ec;
+    tcp::endpoint remoteEp = socket.remote_endpoint(ec);
     address remoteAddress = remoteEp.address();
     ip = remoteAddress.to_string();
 
